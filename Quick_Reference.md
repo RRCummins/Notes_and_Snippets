@@ -16,13 +16,13 @@
 ## Methods 
 
     func doIt() -> Int { 
-    return 0 
+	    return 0 
     } 
     func doIt(a:Int) -> Int { 
-    return a 
+	    return a 
     } 
     func doIt(a:Int, b:Int) -> Int { 
-    return a+b 
+	    return a+b 
     } 
 
 ## Creating/Using an Instance 
@@ -36,7 +36,7 @@
 ## Enums 
 
     enum CollisionType: Int { 
-    case player = 1 case enemy = 2 
+	    case player = 1 case enemy = 2 
     } 
     var type = CollisionType.player
 
@@ -51,7 +51,7 @@
     var optionalDouble:Double? = nil 
     optionalDouble = 1.0 
     if let definiteDouble = optionalDouble { 
-    definiteDouble 
+	    definiteDouble 
     }
 
  
@@ -65,8 +65,8 @@ Variable types Int 1, 2, 500, 10000 Float Double 1.5, 3.14, 578.234 Bool true, f
     var val = 5 switch val { 
     case 1: "foo" case 2: "bar" default: "baz" 
     } 
-    // omits upper value, use ... to include 
-    for i in 0..<3 { 
+	    // omits upper value, use ... to include 
+	    for i in 0..<3 { 
     }
 
 ## String Quick Examples 
@@ -87,7 +87,7 @@ Variable types Int 1, 2, 500, 10000 Float Double 1.5, 3.14, 578.234 Bool true, f
     var array:[String] = [person1, person2] 
     array.append("Waldo") 
     for person in array { 
-    print("person: \(person)") 
+	    print("person: \(person)") 
     } 
     var waldo = array[2] 
 
@@ -102,5 +102,5 @@ Variable types Int 1, 2, 500, 10000 Float Double 1.5, 3.14, 578.234 Bool true, f
     }
 
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbMTg3Mjk0NjM0MF19
+eyJoaXN0b3J5IjpbNzYxMzQ0MDg0XX0=
 -->
