@@ -28,13 +28,34 @@
 ## Creating/Using an Instance 
 
     var a = MyClass() 
-    a.myProperty a.doIt() a.doIt(a:1) a.doIt(a:2, b:3) 
+    a.myProperty 
+    a.doIt() 
+    a.doIt(a:1) 
+    a.doIt(a:2, b:3) 
 
 ## Enums 
-enum CollisionType: Int { case player = 1 case enemy = 2 } var type = CollisionType.player
+
+    enum CollisionType: Int { 
+    case player = 1 case enemy = 2 
+    } 
+    var type = CollisionType.player
 
 ## Declaring Variables 
-var mutableDouble:Double = 1.0 mutableDouble = 2.0 let constantDouble:Double = 1.0 // constantDouble = 2.0 // error var mutableInferredDouble = 1.0 var optionalDouble:Double? = nil optionalDouble = 1.0 if let definiteDouble = optionalDouble { definiteDouble } Variable types Int 1, 2, 500, 10000 Float Double 1.5, 3.14, 578.234 Bool true, false String “Kermit”, “Gonzo”, “Ms. Piggy” ClassName UIView, UIButton, etc 
+
+    var mutableDouble:Double = 1.0 
+    mutableDouble = 2.0 
+    let constantDouble:Double = 1.0 
+    // constantDouble = 2.0 
+    // error 
+    var mutableInferredDouble = 1.0 
+    var optionalDouble:Double? = nil 
+    optionalDouble = 1.0 
+    if let definiteDouble = optionalDouble { 
+    definiteDouble 
+    }
+
+ 
+Variable types Int 1, 2, 500, 10000 Float Double 1.5, 3.14, 578.234 Bool true, false String “Kermit”, “Gonzo”, “Ms. Piggy” ClassName UIView, UIButton, etc 
 
 ## Control Flow 
 var condition = true if condition { } else { } var val = 5 switch val { case 1: "foo" case 2: "bar" default: "baz" } // omits upper value, use ... to include for i in 0..<3 { }
@@ -48,5 +69,5 @@ var person1 = "Ray" var person2 = "Brian" var array:[String] = [person1, person2
 ## Dictionary Quick Examples 
 var dict:[String: String] = ["Frog": "Kermit", "Pig": "Ms. Piggy", "Weirdo": "Gonzo" ] dict["Weirdo"] = "Felipe" dict["Frog"] = nil // delete frog for (type, muppet) in dict { print("type: \(type), muppet: \(muppet)") }
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTM4NDM0OTQxNl19
+eyJoaXN0b3J5IjpbMTI5MDUxMjE0Ml19
 -->
