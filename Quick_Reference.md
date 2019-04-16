@@ -82,10 +82,25 @@ Variable types Int 1, 2, 500, 10000 Float Double 1.5, 3.14, 578.234 Bool true, f
 
 ## Array Quick Examples 
 
-    var person1 = "Ray" var person2 = "Brian" var array:[String] = [person1, person2] array.append("Waldo") for person in array { print("person: \(person)") } var waldo = array[2] 
+    var person1 = "Ray" 
+    var person2 = "Brian" 
+    var array:[String] = [person1, person2] 
+    array.append("Waldo") 
+    for person in array { 
+    print("person: \(person)") 
+    } 
+    var waldo = array[2] 
 
 ## Dictionary Quick Examples 
-var dict:[String: String] = ["Frog": "Kermit", "Pig": "Ms. Piggy", "Weirdo": "Gonzo" ] dict["Weirdo"] = "Felipe" dict["Frog"] = nil // delete frog for (type, muppet) in dict { print("type: \(type), muppet: \(muppet)") }
+
+    var dict:[String: String] = ["Frog": "Kermit", "Pig": "Ms. Piggy", "Weirdo": "Gonzo" ] 
+    dict["Weirdo"] = "Felipe" 
+    dict["Frog"] = nil 
+    // delete frog 
+    for (type, muppet) in dict { 
+	    print("type: \(type), muppet: \(muppet)") 
+    }
+
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTMyOTcxNDg2Nl19
+eyJoaXN0b3J5IjpbMTg3Mjk0NjM0MF19
 -->
