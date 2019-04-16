@@ -2,7 +2,11 @@
 
 ## Class Implementation 
 
-    class MyClass : OptionalSuperClass, OptionalProtocol1, OptionalProtocol2 { var myProperty:String var myOptionalProperty:String? // More properties... // Only need override if subclassing override init() { myProperty = "Foo" } // More methods... } 
+    class MyClass : OptionalSuperClass, OptionalProtocol1, OptionalProtocol2 { 
+    var myProperty:String 
+    var myOptionalProperty:String? 
+    // More properties... 
+    // Only need override if subclassing override init() { myProperty = "Foo" } // More methods... } 
 
 ## Methods 
 func doIt() -> Int { return 0 } func doIt(a:Int) -> Int { return a } func doIt(a:Int, b:Int) -> Int { return a+b } 
@@ -28,5 +32,5 @@ var person1 = "Ray" var person2 = "Brian" var array:[String] = [person1, person2
 ## Dictionary Quick Examples 
 var dict:[String: String] = ["Frog": "Kermit", "Pig": "Ms. Piggy", "Weirdo": "Gonzo" ] dict["Weirdo"] = "Felipe" dict["Frog"] = nil // delete frog for (type, muppet) in dict { print("type: \(type), muppet: \(muppet)") }
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTExMDgwMzIxNjRdfQ==
+eyJoaXN0b3J5IjpbLTk1NDg5NjEwMF19
 -->
