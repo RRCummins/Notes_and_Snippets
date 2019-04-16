@@ -6,13 +6,29 @@
     var myProperty:String 
     var myOptionalProperty:String? 
     // More properties... 
-    // Only need override if subclassing override init() { myProperty = "Foo" } // More methods... } 
+    // Only need override if subclassing 
+    override init() { 	
+	    myProperty = "Foo" 
+	    } 
+    // More methods... 
+    } 
 
 ## Methods 
-func doIt() -> Int { return 0 } func doIt(a:Int) -> Int { return a } func doIt(a:Int, b:Int) -> Int { return a+b } 
+
+    func doIt() -> Int { 
+    return 0 
+    } 
+    func doIt(a:Int) -> Int { 
+    return a 
+    } 
+    func doIt(a:Int, b:Int) -> Int { 
+    return a+b 
+    } 
 
 ## Creating/Using an Instance 
-var a = MyClass() a.myProperty a.doIt() a.doIt(a:1) a.doIt(a:2, b:3) 
+
+    var a = MyClass() 
+    a.myProperty a.doIt() a.doIt(a:1) a.doIt(a:2, b:3) 
 
 ## Enums 
 enum CollisionType: Int { case player = 1 case enemy = 2 } var type = CollisionType.player
@@ -32,5 +48,5 @@ var person1 = "Ray" var person2 = "Brian" var array:[String] = [person1, person2
 ## Dictionary Quick Examples 
 var dict:[String: String] = ["Frog": "Kermit", "Pig": "Ms. Piggy", "Weirdo": "Gonzo" ] dict["Weirdo"] = "Felipe" dict["Frog"] = nil // delete frog for (type, muppet) in dict { print("type: \(type), muppet: \(muppet)") }
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTk1NDg5NjEwMF19
+eyJoaXN0b3J5IjpbLTM4NDM0OTQxNl19
 -->
