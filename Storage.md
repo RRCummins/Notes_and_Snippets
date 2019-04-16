@@ -2,7 +2,7 @@
 
 ## User Defaults
 
-<pre><>code
+<pre><code>
 // Lesson 226 explains UserDefaults
 // Lesson 227 explains Singletons
 // These are Singletons
