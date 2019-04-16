@@ -103,7 +103,7 @@ Variable types Int 1, 2, 500, 10000 Float Double 1.5, 3.14, 578.234 Bool true, f
 
 
 ### Ref:
-[# Swift 4 Cheat Sheet and Quick Reference ](https://www.raywenderlich.com/2381-swift-4-cheat-sheet-and-quick-reference)
+[# Swift 4 Cheat Sheet and Quick Reference - [Ray Wenderlich](https://www.raywenderlich.com/u/rwenderlich)](https://www.raywenderlich.com/2381-swift-4-cheat-sheet-and-quick-reference)
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTE1ODI0NTI3NzZdfQ==
+eyJoaXN0b3J5IjpbLTE4MDI4ODA5XX0=
 -->
