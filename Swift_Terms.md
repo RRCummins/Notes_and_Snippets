@@ -1,5 +1,9 @@
 # Terms
+
+## Operators
+
 ### Ternery Operator
+
 <pre><code>
 //Ternery operator ==>
     // value = condition ? valueIfTure : valueIfFalse
@@ -7,6 +11,7 @@
 </code></pre>
 
 ### Not Operator => !not
+
 <pre><code>
  Using the not operator
     itemArray[indexPath.row].done = !itemArray[indexPath.row].done
