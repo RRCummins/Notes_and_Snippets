@@ -1,5 +1,7 @@
 # Storage Notes
+
 ---
+
 ## User Defaults
 
 <pre><code>
@@ -28,8 +30,11 @@ let myArray = defaults.array(forKey: "MyArray") as! [Int]
 </code></pre>
 
 ---
+
 ## Codable
-### Creating a custom plish
+
+### Creating a custom plist
+
 This is very memory intensive. You have to load up to entire plist to use it. Shouldn't be used for more than 100kb of data.
 
 <pre><code>
@@ -75,5 +80,13 @@ func loadItems() {
 </code></pre>
 
 ---
+
+## SQLite
+
+---
+
 ## Core Data
 
+---
+
+## Realm
