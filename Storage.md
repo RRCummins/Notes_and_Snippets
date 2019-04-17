@@ -89,8 +89,8 @@ func loadItems() {
 
 ### Notes
 - Enity - in CoreData is just like a Class in Codable, it is also like a Table of data.
-- NSPersistantContainer - This is your CoreData DB. It is acutally a SQLite DB.
-- 
+- NSPersistantContainer - This is your CoreData DB. It is acutally a SQLite DB. Can be another type of DB like XML, etc.
+- Context  - Is a temporary area where you can put your data until you are ready to save it.  Also known as a scratch pad.
 
 ### Codegen Options
 - None - Hardest method, this creates no linking code
