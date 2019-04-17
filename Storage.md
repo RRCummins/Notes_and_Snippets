@@ -87,6 +87,16 @@ func loadItems() {
 
 ## Core Data
 
+### Notes
+- Enity - in CoreData is just like a Class in Codable, it is also like a Table of data.
+- NSPersistantContainer - This is your CoreData DB. It is acutally a SQLite DB.
+- 
+
+### Codegen Options
+- None - Hardest method, this creates no linking code
+- Class Definition - Easiest method, xcode creates all the class code and hides it deep in the files structure.
+- Category/Extension - Most used method, user creates the classes with the exact names of the coreData DB and xcode links them up.
+
 ---
 
 ## Realm
