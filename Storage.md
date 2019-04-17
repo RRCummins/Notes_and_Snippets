@@ -28,7 +28,9 @@ let myArray = defaults.array(forKey: "MyArray") as! [Int]
 </code></pre>
 
 ---
-## plist
+## Codable
+### Creating a custom plish
+This is very memory intensive. You have to load up to entire plist to use it. Shouldn't be used for more than 100kb of data.
 
 <pre><code>
 // Make sure the conforms to eight the Encodable and Decodable protocaols or as of Swift 4 just use Codable
