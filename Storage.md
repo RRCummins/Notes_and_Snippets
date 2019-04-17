@@ -1,5 +1,5 @@
 # Storage Notes
-
+---
 ## User Defaults
 
 <pre><code>
@@ -27,7 +27,7 @@ let myDictionary = defaults.dictionary(forKey: dictionaryKey)
 let myArray = defaults.array(forKey: "MyArray") as! [Int]
 </code></pre>
 
-
+---
 ## plist
 
 <pre><code>
@@ -72,5 +72,6 @@ func loadItems() {
 }
 </code></pre>
 
+---
 ## Core Data
 
