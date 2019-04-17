@@ -16,3 +16,6 @@
  Using the not operator
     itemArray[indexPath.row].done = !itemArray[indexPath.row].done
 </code></pre>
+
+## Parts of a project
+- (UIApplication.shared.delegate as! AppDelegate) - creates a singleton object of the AppDelegate for the current app
