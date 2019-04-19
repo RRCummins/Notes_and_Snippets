@@ -98,5 +98,13 @@ func loadItems() {
 - Category/Extension - Most used method, user creates the classes with the exact names of the coreData DB and xcode links them up.
 
 ---
+## CRUD
+### Create
+
+### Read
+
+### Update
+
+### Delete
 
 ## Realm
