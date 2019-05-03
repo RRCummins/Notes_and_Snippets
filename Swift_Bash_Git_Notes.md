@@ -283,3 +283,14 @@ fastlane/test_output
 
 iOSInjectionProject/
 </code></pre>
+
+
+## If Git isn't working in xcode try this in terminal
+
+### On the command line, type the following:
+
+<pre><code>
+xcrun git config --global user.email you@yourdomain.com
+xcrun git config --global user.name "Your Name Here"
+
+</code></pre>
