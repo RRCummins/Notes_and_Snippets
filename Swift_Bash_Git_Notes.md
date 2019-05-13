@@ -63,7 +63,7 @@ clear -> 'Clears the terminal screen'
 
 </code></pre>
 
-## The following is bach for initializing git, then commiting, and then pushing to a remote server
+## The bash for initializing git, then commiting, and then pushing to a remote server
 
 <pre><code>
 Ryans-MacBook-Pro:~ ryancummins$ cd /Users/ryancummins/Development/AppBrewery/GitTest 
@@ -145,7 +145,7 @@ Merge made by the 'recursive' strategy.
 :q!
 </code></pre>
 
-## The following is my bash commands for creating a .gitignore file
+## My bash commands for creating a .gitignore file
 
 <pre><code>
 Ryans-MacBook-Pro:~ ryancummins$ cd /Users/ryancummins/Development/AppBrewery/GitTest 
@@ -200,7 +200,7 @@ Ryans-MacBook-Pro:GitTest ryancummins$
 
 </code></pre>
 
-## The Following is the GitHub recommended contents of a .gitignore file for Swift
+## GitHub recommended contents of a .gitignore file for Swift
 [GitHub Swift .gitignore Repo](https://github.com/github/gitignore/blob/master/Swift.gitignore)
 
 <pre><code>
