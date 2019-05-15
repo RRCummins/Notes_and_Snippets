@@ -2,7 +2,7 @@
 
 ## Terms
 
-## The following bash for cloning a file
+## Cloning a file using bash
 
 <pre><code>
 Ryans-MacBook-Pro:Development ryancummins$ cd /Users/ryancummins/Development/AppBrewery 
