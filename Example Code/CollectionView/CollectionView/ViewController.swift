@@ -63,7 +63,7 @@ extension ViewController: UICollectionViewDelegateFlowLayout, UICollectionViewDa
   
   func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
     let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "cell", for: indexPath) as! CustomCell
-    cell.backgroundColor = UIColor(named: "CellColor")
+//    cell.backgroundColor = UIColor(named: "CellColor")
     cell.data = self.data[indexPath.row]
     return cell
   }
@@ -87,6 +87,7 @@ class CustomCell: UICollectionViewCell {
     iv.translatesAutoresizingMaskIntoConstraints = false
     iv.contentMode = .scaleAspectFill
     iv.clipsToBounds = true
+    iv.layer.cornerRadius = 12
     return iv
     
   }()
