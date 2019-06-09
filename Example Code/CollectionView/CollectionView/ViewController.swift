@@ -8,8 +8,20 @@
 
 import UIKit
 
+struct CustomData {
+  var title: String
+  var image: UIImage
+  var url: String
+}
+
 class ViewController: UIViewController {
   
+  let data = [
+    CustomData(title: "frisbee", image: #imageLiteral(resourceName: "threeFrisbee"), url: "frisbee.com"),
+    CustomData(title: "hiking", image: #imageLiteral(resourceName: "oneHiking"), url: "hiking.com"),
+    CustomData(title: "baseball", image: #imageLiteral(resourceName: "fourBaseball"), url: "baseball.com"),
+    CustomData(title: "soccer", image: #imageLiteral(resourceName: "twoNet"), url: "soccer.com")
+  ]
   
   fileprivate let collectionView: UICollectionView = {
     let layout = UICollectionViewFlowLayout()
@@ -46,12 +58,13 @@ extension ViewController: UICollectionViewDelegateFlowLayout, UICollectionViewDa
   
   
   func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-    return 20
+    return data.count
   }
   
   func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
     let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "cell", for: indexPath) as! CustomCell
     cell.backgroundColor = UIColor(named: "CellColor")
+    cell.data = self.data[indexPath.row]
     return cell
   }
   
@@ -61,11 +74,18 @@ extension ViewController: UICollectionViewDelegateFlowLayout, UICollectionViewDa
 //MArk: - Cell Class
 class CustomCell: UICollectionViewCell {
   
+  var data: CustomData? {
+    didSet {
+      guard let data = data else {return}
+      bg.image = data.image
+    }
+  }
+  
   fileprivate let bg: UIImageView = {
     let iv = UIImageView()
     iv.image = #imageLiteral(resourceName: "threeFrisbee")
     iv.translatesAutoresizingMaskIntoConstraints = false
-    iv.contentMode = .scaleToFill
+    iv.contentMode = .scaleAspectFill
     iv.clipsToBounds = true
     return iv
     
