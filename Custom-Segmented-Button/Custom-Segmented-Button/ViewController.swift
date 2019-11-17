@@ -12,7 +12,11 @@ class ViewController: UIViewController {
 
   override func viewDidLoad() {
     super.viewDidLoad()
-    // Do any additional setup after loading the view.
+    
+    let codeSegmented = CustomSegmentedButton(frame: CGRect(x: 0, y: 50, width: self.view.frame.width, height: 50), buttonTitle: ["Screen 1", "Screen 2", "Screen 3"])
+      codeSegmented.backgroundColor = .clear
+      view.addSubview(codeSegmented)
+    
   }
 
 
