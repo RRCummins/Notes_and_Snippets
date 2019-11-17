@@ -15,9 +15,16 @@ class ViewController: UIViewController {
     
     let redView = UIView()
     redView.backgroundColor = .red
-    view.addSubview(redView)
     
-    redView.anchor(top: view.safeAreaLayoutGuide.topAnchor, leading: view.safeAreaLayoutGuide.leadingAnchor, bottom: view.safeAreaLayoutGuide.bottomAnchor, trailing: view.safeAreaLayoutGuide.trailingAnchor, padding: .init(top: 0, left: 16, bottom: 0, right: 16))
+    let blueView = UIView()
+    blueView.backgroundColor = .blue
+    
+    view.addSubview(redView)
+    view.addSubview(blueView)
+    
+    redView.anchor(top: view.safeAreaLayoutGuide.topAnchor, leading: nil, bottom: nil, trailing: view.safeAreaLayoutGuide.trailingAnchor, padding: .init(top: 0, left: 0, bottom: 0, right: 12), size: .init(width: 100, height: 100))
+    
+//    redView.anchor(top: view.safeAreaLayoutGuide.topAnchor, leading: view.safeAreaLayoutGuide.leadingAnchor, bottom: view.safeAreaLayoutGuide.bottomAnchor, trailing: view.safeAreaLayoutGuide.trailingAnchor, padding: .init(top: 0, left: 16, bottom: 0, right: 16))
     
   }
   
