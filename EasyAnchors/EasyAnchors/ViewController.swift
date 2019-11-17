@@ -19,8 +19,8 @@ class ViewController: UIViewController {
     let blueView = UIView()
     blueView.backgroundColor = .blue
     
-    view.addSubview(redView)
-    view.addSubview(blueView)
+    [redView, blueView].forEach { view.addSubview($0) }
+    
     
     redView.anchor(top: view.safeAreaLayoutGuide.topAnchor, leading: nil, bottom: nil, trailing: view.safeAreaLayoutGuide.trailingAnchor, padding: .init(top: 0, left: 0, bottom: 0, right: 12), size: .init(width: 100, height: 100))
     
