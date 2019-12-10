@@ -14,15 +14,45 @@ class ViewController: UIViewController {
   
   override func viewDidLoad() {
     super.viewDidLoad()
-    
-    
     let center = view.center
-    let circularPath = UIBezierPath(arcCenter: center, radius: 100, startAngle: 0, endAngle: 2 * CGFloat.pi, clockwise: true)
+    addTrackPath(center: center)
+    addAnimatedPath(center: center)
+
+//    let circularPath = UIBezierPath(arcCenter: center, radius: 100, startAngle: -CGFloat.pi / 2, endAngle: 2 * CGFloat.pi, clockwise: true)
+//    shapeLayer.path = circularPath.cgPath
+//    shapeLayer.strokeColor = UIColor.red.cgColor
+//    shapeLayer.lineWidth = 10
+//    shapeLayer.fillColor = UIColor.clear.cgColor
+//    shapeLayer.strokeEnd = 0
+//    shapeLayer.lineCap = CAShapeLayerLineCap.round
+//
+//
+//    view.layer.addSublayer(shapeLayer)
+//
+//    view.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(handleTap)))
+  }
+  
+  func addTrackPath(center: CGPoint) {
+    let trackPath = CAShapeLayer()
+    let circularPath = UIBezierPath(arcCenter: center, radius: 100, startAngle: -CGFloat.pi / 2, endAngle: 2 * CGFloat.pi, clockwise: true)
+    trackPath.path = circularPath.cgPath
+    trackPath.strokeColor = UIColor.lightGray.cgColor
+    trackPath.lineWidth = 10
+    trackPath.fillColor = UIColor.clear.cgColor
+    trackPath.lineCap = CAShapeLayerLineCap.round
+    
+    
+    view.layer.addSublayer(trackPath)
+  }
+  
+  func addAnimatedPath(center: CGPoint) {
+    let circularPath = UIBezierPath(arcCenter: center, radius: 100, startAngle: -CGFloat.pi / 2, endAngle: 2 * CGFloat.pi, clockwise: true)
     shapeLayer.path = circularPath.cgPath
     shapeLayer.strokeColor = UIColor.red.cgColor
     shapeLayer.lineWidth = 10
+    shapeLayer.fillColor = UIColor.clear.cgColor
     shapeLayer.strokeEnd = 0
-    
+    shapeLayer.lineCap = CAShapeLayerLineCap.round
     
     
     view.layer.addSublayer(shapeLayer)
@@ -30,8 +60,14 @@ class ViewController: UIViewController {
     view.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(handleTap)))
   }
   
-  @objc func handleTap() {
+  private func beginDownloadingFile() {
+    
+  }
+  
+  @objc private func handleTap() {
     print("Attempting to handle tap gesture")
+    
+    beginDownloadingFile()
     
     let basicAnimation = CABasicAnimation(keyPath: "strokeEnd")
     
