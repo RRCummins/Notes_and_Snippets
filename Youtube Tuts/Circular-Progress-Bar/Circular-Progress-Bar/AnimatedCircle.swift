@@ -30,7 +30,7 @@ class AnimatedCircle: UIView {
     setUp()
   }
   
-  func setUp() {
+  private func setUp() {
     
     addTrackPath(center: centerPoint)
     addAnimatedPath(center: centerPoint)
