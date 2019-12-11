@@ -9,7 +9,7 @@
 import UIKit
 
 class AnimatedCircle: UIView {
-  let centerPoint: CGPoint = = CGPointMake(NSLayoutConstraint.Attribute.centerX, NSLayoutConstraint.Attribute.centerY)
+  let centerPoint: CGPoint
   let shapeLayer = CAShapeLayer()
   let trackPath = CAShapeLayer()
   
@@ -19,16 +19,16 @@ class AnimatedCircle: UIView {
   
   override init(frame: CGRect) {
     super.init(frame: frame)
+    centerPoint = CGPointMake(NSLayoutConstraint.Attribute.centerX, NSLayoutConstraint.Attribute.centerY)
+    //Maybe frame.center instead
     setUp()
   }
   
   convenience init(centerPoint: CGPoint) {
-    self.init(frame: .zero)
+    self.init()
     self.centerPoint = centerPoint
-//    setUp()
+    setUp()
   }
-  
-  
   
   func setUp() {
     
