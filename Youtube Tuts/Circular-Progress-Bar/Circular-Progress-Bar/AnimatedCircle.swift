@@ -9,7 +9,7 @@
 import UIKit
 
 class AnimatedCircle: UIView {
-  let centerPoint: CGPoint
+  let centerPoint: CGPoint = = CGPointMake(NSLayoutConstraint.Attribute.centerX, NSLayoutConstraint.Attribute.centerY)
   let shapeLayer = CAShapeLayer()
   let trackPath = CAShapeLayer()
   
