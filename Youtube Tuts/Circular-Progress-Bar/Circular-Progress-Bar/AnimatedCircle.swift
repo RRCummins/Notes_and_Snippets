@@ -19,6 +19,7 @@ class AnimatedCircle: UIView {
   
   var lineWidth: CGFloat = 10
   var radius: CGFloat = 50
+  var strokeEnd: CGFloat = 0
   
   required init?(coder: NSCoder) {
     fatalError("init(coder:) has not been implemented")
@@ -35,13 +36,14 @@ class AnimatedCircle: UIView {
     setUp()
   }
   
-  convenience init(centerPoint: CGPoint, baseColor: CGColor, topColor: CGColor, lineWidth: CGFloat, radius: CGFloat) {
+  convenience init(centerPoint: CGPoint, baseColor: CGColor, topColor: CGColor, lineWidth: CGFloat, radius: CGFloat, strokeEnd: CGFloat) {
     self.init()
     self.centerPoint = centerPoint
     self.baseColor = baseColor
     self.topColor = topColor
     self.lineWidth = lineWidth
     self.radius = radius
+    self.strokeEnd = strokeEnd
     setUp()
   }
   
@@ -67,7 +69,7 @@ class AnimatedCircle: UIView {
     shapeLayer.strokeColor = topColor
     shapeLayer.lineWidth = lineWidth
     shapeLayer.fillColor = UIColor.clear.cgColor
-    shapeLayer.strokeEnd = 0
+    shapeLayer.strokeEnd = strokeEnd
     shapeLayer.lineCap = CAShapeLayerLineCap.round
     
     layer.addSublayer(shapeLayer)
