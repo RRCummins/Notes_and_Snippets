@@ -18,13 +18,13 @@ class ViewController: UIViewController, URLSessionDownloadDelegate {
   var circle1 = AnimatedCircle()
   var percentageComplete: CGFloat = 0
   
-  let percentageLabel: UILabel  {
+  let percentageLabel: UILabel = {
     let label = UILabel()
     label.text = "Start"
     label.textAlignment = .center
     label.font = UIFont.boldSystemFont(ofSize: 32)
     return label
-  }
+  }()
   
   let shapeLayer = CAShapeLayer()
   let trackPath = CAShapeLayer()
@@ -37,9 +37,14 @@ class ViewController: UIViewController, URLSessionDownloadDelegate {
   
   override func viewDidLoad() {
     super.viewDidLoad()
+    
+    view.addSubview(percentageLabel)
+    percentageLabel.frame = CGRect(x: 0, y: 0, width: 100, height: 100)
+    percentageLabel.center = view.center
+    
     centerPoint = view.center
     view.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(handleTap)))
-//    view.addSubview(circle1)
+    
     setUp()
   }
   
@@ -58,11 +63,12 @@ class ViewController: UIViewController, URLSessionDownloadDelegate {
   
   func urlSession(_ session: URLSession, downloadTask: URLSessionDownloadTask, didWriteData bytesWritten: Int64, totalBytesWritten: Int64, totalBytesExpectedToWrite: Int64) {
   //    print(totalBytesWritten, totalBytesExpectedToWrite)
-      
       let percentage = CGFloat(totalBytesWritten) / CGFloat(totalBytesExpectedToWrite)
       
       DispatchQueue.main.async {
+        self.percentageLabel.text = "\(Int(percentage * 100))%"
         self.shapeLayer.strokeEnd = percentage
+        
       }
       
       print(percentage)
