@@ -17,6 +17,9 @@ class AnimatedCircle: UIView {
   var baseColor: CGColor = UIColor.lightGray.cgColor
   var topColor: CGColor = UIColor.red.cgColor
   
+  var lineWidth: CGFloat = 10
+  var radius: CGFloat = 50
+  
   required init?(coder: NSCoder) {
     fatalError("init(coder:) has not been implemented")
   }
@@ -32,18 +35,26 @@ class AnimatedCircle: UIView {
     setUp()
   }
   
+  convenience init(centerPoint: CGPoint, baseColor: CGColor, topColor: CGColor, lineWidth: CGFloat, radius: CGFloat) {
+    self.init()
+    self.centerPoint = centerPoint
+    self.baseColor = baseColor
+    self.topColor = topColor
+    self.lineWidth = lineWidth
+    self.radius = radius
+    setUp()
+  }
+  
   private func setUp() {
-    
     addTrackPath(center: centerPoint)
     addAnimatedPath(center: centerPoint)
   }
 
   func addTrackPath(center: CGPoint) {
-
-    let circularPath = UIBezierPath(arcCenter: center, radius: 100, startAngle: -CGFloat.pi / 2, endAngle: 2 * CGFloat.pi, clockwise: true)
+    let circularPath = UIBezierPath(arcCenter: center, radius: radius, startAngle: -CGFloat.pi / 2, endAngle: 2 * CGFloat.pi, clockwise: true)
     trackPath.path = circularPath.cgPath
     trackPath.strokeColor = baseColor
-    trackPath.lineWidth = 10
+    trackPath.lineWidth = lineWidth
     trackPath.fillColor = UIColor.clear.cgColor
     trackPath.lineCap = CAShapeLayerLineCap.round
     
@@ -51,10 +62,10 @@ class AnimatedCircle: UIView {
   }
   
   func addAnimatedPath(center: CGPoint) {
-    let circularPath = UIBezierPath(arcCenter: center, radius: 100, startAngle: -CGFloat.pi / 2, endAngle: 2 * CGFloat.pi, clockwise: true)
+    let circularPath = UIBezierPath(arcCenter: center, radius: radius, startAngle: -CGFloat.pi / 2, endAngle: 2 * CGFloat.pi, clockwise: true)
     shapeLayer.path = circularPath.cgPath
     shapeLayer.strokeColor = topColor
-    shapeLayer.lineWidth = 10
+    shapeLayer.lineWidth = lineWidth
     shapeLayer.fillColor = UIColor.clear.cgColor
     shapeLayer.strokeEnd = 0
     shapeLayer.lineCap = CAShapeLayerLineCap.round
@@ -71,12 +82,10 @@ class AnimatedCircle: UIView {
    circle1.animateCircle()
    }
    */
-  
   func animateCircle() {
     let basicAnimation = CABasicAnimation(keyPath: "strokeEnd")
     
     basicAnimation.toValue = 1
-    
     basicAnimation.duration = 2
     
     basicAnimation.fillMode = CAMediaTimingFillMode.forwards
