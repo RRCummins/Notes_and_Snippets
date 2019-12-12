@@ -10,71 +10,21 @@ import UIKit
 
 class ViewController: UIViewController {
   
-//  let shapeLayer = CAShapeLayer()
+  var circle1 = AnimatedCircle()
   
   override func viewDidLoad() {
     super.viewDidLoad()
-//    let center = view.center
-//    addTrackPath(center: center)
-//    addAnimatedPath(center: center)
-    
-    
 
+    circle1 = AnimatedCircle(centerPoint: view.center)
+    
+    view.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(handleTap)))
+    view.addSubview(circle1)
   }
   
-//  func addTrackPath(center: CGPoint) {
-//    let trackPath = CAShapeLayer()
-//    let circularPath = UIBezierPath(arcCenter: center, radius: 100, startAngle: -CGFloat.pi / 2, endAngle: 2 * CGFloat.pi, clockwise: true)
-//    trackPath.path = circularPath.cgPath
-//    trackPath.strokeColor = UIColor.lightGray.cgColor
-//    trackPath.lineWidth = 10
-//    trackPath.fillColor = UIColor.clear.cgColor
-//    trackPath.lineCap = CAShapeLayerLineCap.round
-//
-//
-//    view.layer.addSublayer(trackPath)
-//  }
-//
-//  func addAnimatedPath(center: CGPoint) {
-//    let circularPath = UIBezierPath(arcCenter: center, radius: 100, startAngle: -CGFloat.pi / 2, endAngle: 2 * CGFloat.pi, clockwise: true)
-//    shapeLayer.path = circularPath.cgPath
-//    shapeLayer.strokeColor = UIColor.red.cgColor
-//    shapeLayer.lineWidth = 10
-//    shapeLayer.fillColor = UIColor.clear.cgColor
-//    shapeLayer.strokeEnd = 0
-//    shapeLayer.lineCap = CAShapeLayerLineCap.round
-//
-//
-//    view.layer.addSublayer(shapeLayer)
-//
-//    view.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(handleTap)))
-//  }
-//
-//  private func beginDownloadingFile() {
-//    print("Attempting to download file")
-//  }
-//
-//  fileprivate func animateCircle() {
-//    let basicAnimation = CABasicAnimation(keyPath: "strokeEnd")
-//
-//    basicAnimation.toValue = 1
-//
-//    basicAnimation.duration = 2
-//
-//    basicAnimation.fillMode = CAMediaTimingFillMode.forwards
-//    basicAnimation.isRemovedOnCompletion = false
-//
-//    shapeLayer.add(basicAnimation, forKey: "urSoBasic")
-//  }
-//
-//  @objc private func handleTap() {
-//    print("Attempting to animate stroke")
-//
-//    beginDownloadingFile()
-//
-//    animateCircle()
-//
-//  }
+  @objc func handleTap() {
+//    print("trying to handle")
+    circle1.animateCircle()
+  }
 
 
 }

@@ -9,9 +9,13 @@
 import UIKit
 
 class AnimatedCircle: UIView {
-  let centerPoint: CGPoint
+  
   let shapeLayer = CAShapeLayer()
   let trackPath = CAShapeLayer()
+  
+  var centerPoint: CGPoint = CGPoint(x: 0, y: 0)
+  var baseColor: CGColor = UIColor.lightGray.cgColor
+  var topColor: CGColor = UIColor.red.cgColor
   
   required init?(coder: NSCoder) {
     fatalError("init(coder:) has not been implemented")
@@ -19,8 +23,6 @@ class AnimatedCircle: UIView {
   
   override init(frame: CGRect) {
     super.init(frame: frame)
-    centerPoint = CGPointMake(NSLayoutConstraint.Attribute.centerX, NSLayoutConstraint.Attribute.centerY)
-    //Maybe frame.center instead
     setUp()
   }
   
@@ -34,15 +36,13 @@ class AnimatedCircle: UIView {
     
     addTrackPath(center: centerPoint)
     addAnimatedPath(center: centerPoint)
-    layer.addSublayer(trackPath)
   }
 
-  
   func addTrackPath(center: CGPoint) {
 
     let circularPath = UIBezierPath(arcCenter: center, radius: 100, startAngle: -CGFloat.pi / 2, endAngle: 2 * CGFloat.pi, clockwise: true)
     trackPath.path = circularPath.cgPath
-    trackPath.strokeColor = UIColor.lightGray.cgColor
+    trackPath.strokeColor = baseColor
     trackPath.lineWidth = 10
     trackPath.fillColor = UIColor.clear.cgColor
     trackPath.lineCap = CAShapeLayerLineCap.round
@@ -53,23 +53,26 @@ class AnimatedCircle: UIView {
   func addAnimatedPath(center: CGPoint) {
     let circularPath = UIBezierPath(arcCenter: center, radius: 100, startAngle: -CGFloat.pi / 2, endAngle: 2 * CGFloat.pi, clockwise: true)
     shapeLayer.path = circularPath.cgPath
-    shapeLayer.strokeColor = UIColor.red.cgColor
+    shapeLayer.strokeColor = topColor
     shapeLayer.lineWidth = 10
     shapeLayer.fillColor = UIColor.clear.cgColor
     shapeLayer.strokeEnd = 0
     shapeLayer.lineCap = CAShapeLayerLineCap.round
     
-    
     layer.addSublayer(shapeLayer)
-    
-    self.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(handleTap)))
   }
   
-  private func beginDownloadingFile() {
-    print("Attempting to download file")
-  }
+  /*
+   Add Gesture Recognizer to activate animation
+   i.e.
+   view.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(handleTap)))
+   
+   @objc func handleTap() {
+   circle1.animateCircle()
+   }
+   */
   
-  fileprivate func animateCircle() {
+  func animateCircle() {
     let basicAnimation = CABasicAnimation(keyPath: "strokeEnd")
     
     basicAnimation.toValue = 1
@@ -82,23 +85,5 @@ class AnimatedCircle: UIView {
     shapeLayer.add(basicAnimation, forKey: "urSoBasic")
   }
   
-  @objc private func handleTap() {
-    print("Attempting to animate stroke")
-    
-    beginDownloadingFile()
-    
-    animateCircle()
-    
-  }
-  
-  
-
-    /*
-    // Only override draw() if you perform custom drawing.
-    // An empty implementation adversely affects performance during animation.
-    override func draw(_ rect: CGRect) {
-        // Drawing code
-    }
-    */
 
 }
