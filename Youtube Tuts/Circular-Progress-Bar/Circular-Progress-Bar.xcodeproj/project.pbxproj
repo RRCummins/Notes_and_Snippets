@@ -14,6 +14,7 @@
 		1E4B9089239F1F2B00F119FC /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 1E4B9088239F1F2B00F119FC /* Assets.xcassets */; };
 		1E4B908C239F1F2B00F119FC /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1E4B908A239F1F2B00F119FC /* LaunchScreen.storyboard */; };
 		1E4B909423A07AD800F119FC /* AnimatedCircle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1E4B909323A07AD800F119FC /* AnimatedCircle.swift */; };
+		1E4B909623A205EE00F119FC /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1E4B909523A205EE00F119FC /* Extensions.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -26,6 +27,7 @@
 		1E4B908B239F1F2B00F119FC /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		1E4B908D239F1F2B00F119FC /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		1E4B909323A07AD800F119FC /* AnimatedCircle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnimatedCircle.swift; sourceTree = "<group>"; };
+		1E4B909523A205EE00F119FC /* Extensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Extensions.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -64,6 +66,7 @@
 				1E4B909323A07AD800F119FC /* AnimatedCircle.swift */,
 				1E4B9085239F1F2500F119FC /* Main.storyboard */,
 				1E4B9088239F1F2B00F119FC /* Assets.xcassets */,
+				1E4B909523A205EE00F119FC /* Extensions.swift */,
 				1E4B908A239F1F2B00F119FC /* LaunchScreen.storyboard */,
 				1E4B908D239F1F2B00F119FC /* Info.plist */,
 			);
@@ -141,6 +144,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				1E4B909623A205EE00F119FC /* Extensions.swift in Sources */,
 				1E4B909423A07AD800F119FC /* AnimatedCircle.swift in Sources */,
 				1E4B9084239F1F2500F119FC /* ViewController.swift in Sources */,
 				1E4B9080239F1F2500F119FC /* AppDelegate.swift in Sources */,
