@@ -50,11 +50,23 @@ class ViewController: UIViewController, URLSessionDownloadDelegate {
   
   override func viewDidLoad() {
     super.viewDidLoad()
+    
+    setupNotificationObservers()
+    
+    
     view.backgroundColor = .backgroundColor
     centerPoint = view.center
     view.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(handleTap)))
     
     setUp()
+  }
+  
+  private func setupNotificationObservers() {
+    NotificationCenter.default.addObserver(self, selector: #selector(handleEnterForeground), name: UIApplication.willEnterForegroundNotification, object: nil)
+  }
+  
+  @objc private func handleEnterForeground() {
+    animatePulsatingLayer()
   }
   
   func begindDownloadingFile() {
