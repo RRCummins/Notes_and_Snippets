@@ -5,6 +5,19 @@
 import UIKit
 import Foundation
 
+protocol ColorThemeObserving {
+
+  // Registers observance of 'didChangeColorTheme' custom notifications.
+  func addDidChangeColorThemeObserver(notificationCenter: NotificationCenter)
+  
+  // Removes observence of 'didChangeColorTheme' custom notifications.
+  func removeDidChangeColorThemeObserver(notificationCenter: NotificationCenter)
+  
+  // Responds to 'didChangeColorTheme' custom notifications.
+  func didChangeColorTheme(notificaiton: Notification)
+
+}
+
 extension UIColor {
     func colorFromHexString (_ hex:String) -> UIColor {
         var cString:String = hex.trimmingCharacters(in: .whitespacesAndNewlines).uppercased()
