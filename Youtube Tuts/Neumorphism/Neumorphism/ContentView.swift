@@ -57,10 +57,39 @@ struct SimpleButtonStyle: ButtonStyle {
     }
 }
 
+struct DarkBackground<S: Shape>: View {
+    var isHighlighted: Bool
+    var shape: S
+    
+    var body: some View {
+        ZStack { if isHighlighted {
+                shape
+                    .fill(Color.darkEnd)
+                    .shadow(color: Color.darkStart, radius: 10, x: 5, y: 5)
+                    .shadow(color: Color.darkEnd, radius: 10, x: -5, y: -5)
+            } else {
+                shape
+                    .fill(Color.darkEnd)
+                    .shadow(color: Color.darkStart, radius: 10, x: -10, y: -10)
+                    .shadow(color: Color.darkEnd, radius: 10, x: 10, y: 10)
+            }
+        }
+    }
+}
+
+struct DarkButtonStyle: ButtonStyle {
+    func makeBody(configuration: Configuration) -> some View {
+        configuration.label
+        .padding(30)
+        .contentShape(Circle())
+            .background(DarkBackground(isHighlighted: configuration.isPressed, shape: Circle()))
+    }
+}
+
 struct ContentView: View {
     var body: some View {
         ZStack {
-            Color.offWhite
+            LinearGradient(Color.darkStart, Color.darkEnd)
             
             Button(action: {
                 print("Button Tapped")
@@ -68,26 +97,11 @@ struct ContentView: View {
                 Image(systemName: "heart.fill")
                     .foregroundColor(.gray)
             }
-        .buttonStyle(SimpleButtonStyle())
+            .buttonStyle(DarkButtonStyle())
         }
         .edgesIgnoringSafeArea(.all)
     }
 }
-
-//struct ContentView: View {
-//    var body: some View {
-//        ZStack {
-//            Color.offWhite
-//
-//            RoundedRectangle(cornerRadius: 25)
-//                .fill(Color.offWhite)
-//                .frame(width: 300, height: 300)
-//                .shadow(color: Color.black.opacity(0.2), radius: 10, x: 10, y: 10)
-//                .shadow(color: Color.white.opacity(0.7), radius: 10, x: -5, y: -5)
-//        }
-//        .edgesIgnoringSafeArea(.all)
-//    }
-//}
 
 struct ContentView_Previews: PreviewProvider {
     static var previews: some View {
