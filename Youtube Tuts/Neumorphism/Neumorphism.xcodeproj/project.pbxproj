@@ -11,9 +11,9 @@
 		1E1DB61424072530004F7D5A /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1E1DB61324072530004F7D5A /* SceneDelegate.swift */; };
 		1E1DB61724072530004F7D5A /* Neumorphism.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 1E1DB61524072530004F7D5A /* Neumorphism.xcdatamodeld */; };
 		1E1DB61924072530004F7D5A /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1E1DB61824072530004F7D5A /* ContentView.swift */; };
-		1E1DB61B24072536004F7D5A /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 1E1DB61A24072536004F7D5A /* Assets.xcassets */; };
 		1E1DB61E24072536004F7D5A /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 1E1DB61D24072536004F7D5A /* Preview Assets.xcassets */; };
 		1E1DB62124072536004F7D5A /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1E1DB61F24072536004F7D5A /* LaunchScreen.storyboard */; };
+		1E1DB62B2407391B004F7D5A /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 1E1DB62A2407391B004F7D5A /* Assets.xcassets */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -22,10 +22,10 @@
 		1E1DB61324072530004F7D5A /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
 		1E1DB61624072530004F7D5A /* Neumorphism.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Neumorphism.xcdatamodel; sourceTree = "<group>"; };
 		1E1DB61824072530004F7D5A /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
-		1E1DB61A24072536004F7D5A /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		1E1DB61D24072536004F7D5A /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		1E1DB62024072536004F7D5A /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		1E1DB62224072536004F7D5A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		1E1DB62A2407391B004F7D5A /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; name = Assets.xcassets; path = ../Assets.xcassets; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -61,7 +61,7 @@
 				1E1DB61124072530004F7D5A /* AppDelegate.swift */,
 				1E1DB61324072530004F7D5A /* SceneDelegate.swift */,
 				1E1DB61824072530004F7D5A /* ContentView.swift */,
-				1E1DB61A24072536004F7D5A /* Assets.xcassets */,
+				1E1DB62A2407391B004F7D5A /* Assets.xcassets */,
 				1E1DB61F24072536004F7D5A /* LaunchScreen.storyboard */,
 				1E1DB62224072536004F7D5A /* Info.plist */,
 				1E1DB61524072530004F7D5A /* Neumorphism.xcdatamodeld */,
@@ -138,7 +138,7 @@
 			files = (
 				1E1DB62124072536004F7D5A /* LaunchScreen.storyboard in Resources */,
 				1E1DB61E24072536004F7D5A /* Preview Assets.xcassets in Resources */,
-				1E1DB61B24072536004F7D5A /* Assets.xcassets in Resources */,
+				1E1DB62B2407391B004F7D5A /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
