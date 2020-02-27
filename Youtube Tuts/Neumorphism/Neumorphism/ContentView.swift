@@ -10,9 +10,9 @@ import SwiftUI
 
 extension Color {
     static let offWhite = Color(red: 225 / 255, green: 225 / 255, blue: 235 / 255)
-    
     static let darkStart = Color(red: 50 / 255, green: 60 / 255, blue: 65 / 255)
     static let darkEnd = Color(red: 25 / 255, green: 25 / 255, blue: 30 / 255)
+    static let darkGrey = Color(red: 40 / 255, green: 40 / 255, blue: 50 / 255)
     
 }
 
@@ -37,6 +37,7 @@ struct DarkBackground<S: Shape>: View {
         } else {
             shape
                 .fill(LinearGradient(Color.darkStart, Color.darkEnd))
+                .overlay(shape.stroke(LinearGradient(Color.darkGrey, Color.darkEnd), lineWidth: 4))
                 .shadow(color: Color.darkStart, radius: 10, x: -10, y: -10)
                 .shadow(color: Color.darkEnd, radius: 10, x: 10, y: 10)
             }
