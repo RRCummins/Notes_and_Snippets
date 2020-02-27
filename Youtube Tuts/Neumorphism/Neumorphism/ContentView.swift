@@ -27,9 +27,11 @@ struct DarkBackground<S: Shape>: View {
     var shape: S
     
     var body: some View {
-        ZStack { if isHighlighted {
+        ZStack {
+            if isHighlighted {
             shape
                 .fill(LinearGradient(Color.darkEnd, Color.darkStart))
+                .overlay(shape.stroke(LinearGradient(Color.darkStart, Color.darkEnd), lineWidth: 4))
                 .shadow(color: Color.darkStart, radius: 10, x: 5, y: 5)
                 .shadow(color: Color.darkEnd, radius: 10, x: -5, y: -5)
         } else {
@@ -96,7 +98,7 @@ struct ContentView: View {
                 print("Button Tapped")
             }) {
                 Image(systemName: "heart.fill")
-                    .foregroundColor(.gray)
+                    .foregroundColor(.white)
             }
             .buttonStyle(DarkButtonStyle())
         }
