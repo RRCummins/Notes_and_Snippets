@@ -90,18 +90,42 @@ struct DarkButtonStyle: ButtonStyle {
     }
 }
 
+struct DarkToggleSyle: ToggleStyle {
+    func makeBody(configuration: Configuration) -> some View {
+        Button(action: {
+            configuration.isOn.toggle()
+        })
+        {
+            configuration.label
+            .padding(30)
+            .contentShape(Circle())
+        }
+        .background(DarkBackground(isHighlighted: configuration.isOn, shape: Circle())
+        )
+    }
+}
+
 struct ContentView: View {
+    @State private var isToggled = false
+    
     var body: some View {
         ZStack {
             LinearGradient(Color.darkStart, Color.darkEnd)
-            
-            Button(action: {
-                print("Button Tapped")
-            }) {
-                Image(systemName: "heart.fill")
-                    .foregroundColor(.white)
+            VStack(spacing: 40) {
+                Button(action: {
+                    print("Button Tapped")
+                }) {
+                    Image(systemName: "heart.fill")
+                        .foregroundColor(.white)
+                }
+                .buttonStyle(DarkButtonStyle())
+                
+                Toggle(isOn: $isToggled) {
+                    Image(systemName: "heart.fill")
+                        .foregroundColor(.white)
+                }
+            .toggleStyle(DarkToggleSyle())
             }
-            .buttonStyle(DarkButtonStyle())
         }
         .edgesIgnoringSafeArea(.all)
     }
