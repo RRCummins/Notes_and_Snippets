@@ -83,6 +83,7 @@ struct DarkButtonStyle: ButtonStyle {
         .padding(30)
         .contentShape(Circle())
             .background(DarkBackground(isHighlighted: configuration.isPressed, shape: Circle()))
+        .animation(nil)
     }
 }
 
