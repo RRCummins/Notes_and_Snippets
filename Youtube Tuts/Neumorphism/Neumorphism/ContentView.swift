@@ -129,6 +129,16 @@ struct DarkToggleSyle: ToggleStyle {
     }
 }
 
+struct DarkRectButtonStyle: ButtonStyle {
+    func makeBody(configuration: Configuration) -> some View {
+        configuration.label
+            .padding(30)
+            .contentShape(RoundedRectangle(cornerRadius: 15))
+            .background(DarkBackground(isHighlighted: configuration.isPressed, shape: RoundedRectangle(cornerRadius: 15)))
+            .animation(nil)
+    }
+}
+
 struct ColorfulButtonStyle: ButtonStyle {
     func makeBody(configuration: Configuration) -> some View {
         configuration.label
@@ -167,13 +177,30 @@ struct ContentView: View {
                     Image(systemName: "heart.fill")
                         .foregroundColor(.white)
                 }
+                .buttonStyle(DarkButtonStyle())
+                
+                Button(action: {
+                    print("Button Tapped")
+                }) {
+                    Image(systemName: "heart.fill")
+                        .foregroundColor(.white)
+                }
+                .buttonStyle(DarkRectButtonStyle())
+                
+                Button(action: {
+                    print("Button Tapped")
+                }) {
+                    Image(systemName: "heart.fill")
+                        .foregroundColor(.white)
+                }
                 .buttonStyle(ColorfulButtonStyle())
                 
                 Toggle(isOn: $isToggled) {
                     Image(systemName: "heart.fill")
                         .foregroundColor(.white)
                 }
-            .toggleStyle(ColorfulToggleSyle())
+                .toggleStyle(ColorfulToggleSyle())
+                
             }
         }
         .edgesIgnoringSafeArea(.all)
