@@ -30,7 +30,7 @@ extension LinearGradient {
     }
 }
 
-struct DarkBackground<S: Shape>: View {
+struct MonoBackground<S: Shape>: View {
     var isHighlighted: Bool
     @Environment(\.colorScheme) var colorScheme: ColorScheme
     var shape: S
@@ -56,8 +56,8 @@ struct DarkBackground<S: Shape>: View {
                     shape
                         .fill(LinearGradient(Color.darkEnd, Color.darkStart))
                         .overlay(shape.stroke(LinearGradient(Color.darkStart, Color.darkEnd), lineWidth: 4))
-                        .shadow(color: Color.darkEnd, radius: 10, x: 5, y: 5)
-                        .shadow(color: Color.darkStart, radius: 10, x: -5, y: -5)
+                        .shadow(color: Color.darkStart, radius: 10, x: 5, y: 5)
+                        .shadow(color: Color.darkEnd, radius: 10, x: -5, y: -5)
                 } else {
                     shape
                         .fill(LinearGradient(Color.darkStart, Color.darkEnd))
@@ -128,12 +128,12 @@ struct SimpleButtonStyle: ButtonStyle {
     }
 }
 
-struct DarkButtonStyle: ButtonStyle {
+struct MonoButtonStyle: ButtonStyle {
     func makeBody(configuration: Configuration) -> some View {
         configuration.label
         .padding(30)
         .contentShape(Circle())
-            .background(DarkBackground(isHighlighted: configuration.isPressed, shape: Circle()))
+            .background(MonoBackground(isHighlighted: configuration.isPressed, shape: Circle()))
         .animation(nil)
     }
 }
@@ -148,7 +148,7 @@ struct DarkToggleSyle: ToggleStyle {
             .padding(30)
             .contentShape(Circle())
         }
-        .background(DarkBackground(isHighlighted: configuration.isOn, shape: Circle())
+        .background(MonoBackground(isHighlighted: configuration.isOn, shape: Circle())
         )
     }
 }
@@ -158,7 +158,7 @@ struct DarkRectButtonStyle: ButtonStyle {
         configuration.label
             .padding(30)
             .contentShape(RoundedRectangle(cornerRadius: 15))
-            .background(DarkBackground(isHighlighted: configuration.isPressed, shape: RoundedRectangle(cornerRadius: 15)))
+            .background(MonoBackground(isHighlighted: configuration.isPressed, shape: RoundedRectangle(cornerRadius: 15)))
             .animation(nil)
     }
 }
@@ -194,15 +194,17 @@ struct ContentView: View {
     var body: some View {
         ZStack {
             LinearGradient(Color.darkStart, Color.darkEnd)
-            VStack(spacing: 40) {
-                HStack {
+            VStack(spacing: 50) {
+                HStack(spacing: 50) {
+                    
                     Button(action: {
                         print("Button Tapped")
                     }) {
                         Image(systemName: "heart.fill")
                             .foregroundColor(.white)
                     }
-                    .buttonStyle(DarkButtonStyle())
+                    .buttonStyle(MonoButtonStyle())
+                    
                     
                     Button(action: {
                         print("Button Tapped")
@@ -215,7 +217,7 @@ struct ContentView: View {
                 }
                 
                 
-                HStack {
+                HStack(spacing: 50) {
                     Button(action: {
                         print("Button Tapped")
                     }) {
