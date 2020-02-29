@@ -54,14 +54,14 @@ struct DarkBackground<S: Shape>: View {
             } else {
                 if isHighlighted {
                     shape
-                        .fill(LinearGradient(Color.darkStart, Color.darkEnd))
+                        .fill(LinearGradient(Color.darkEnd, Color.darkStart))
                         .overlay(shape.stroke(LinearGradient(Color.darkStart, Color.darkEnd), lineWidth: 4))
                         .shadow(color: Color.darkEnd, radius: 10, x: 5, y: 5)
                         .shadow(color: Color.darkStart, radius: 10, x: -5, y: -5)
                 } else {
                     shape
-                        .fill(LinearGradient(Color.darkEnd, Color.darkStart))
-                        .overlay(shape.stroke(LinearGradient(Color.darkGrey, Color.darkEnd), lineWidth: 4))
+                        .fill(LinearGradient(Color.darkStart, Color.darkEnd))
+                        .overlay(shape.stroke(LinearGradient(Color.darkStart, Color.darkEnd), lineWidth: 4))
                         .shadow(color: Color.darkStart, radius: 10, x: -10, y: -10)
                         .shadow(color: Color.darkEnd, radius: 10, x: 10, y: 10)
                 }
@@ -195,35 +195,42 @@ struct ContentView: View {
         ZStack {
             LinearGradient(Color.darkStart, Color.darkEnd)
             VStack(spacing: 40) {
-                Button(action: {
-                    print("Button Tapped")
-                }) {
-                    Image(systemName: "heart.fill")
-                        .foregroundColor(.white)
+                HStack {
+                    Button(action: {
+                        print("Button Tapped")
+                    }) {
+                        Image(systemName: "heart.fill")
+                            .foregroundColor(.white)
+                    }
+                    .buttonStyle(DarkButtonStyle())
+                    
+                    Button(action: {
+                        print("Button Tapped")
+                    }) {
+                        Image(systemName: "heart.fill")
+                            .foregroundColor(.white)
+                    }
+                    .buttonStyle(DarkRectButtonStyle())
+                    
                 }
-                .buttonStyle(DarkButtonStyle())
                 
-                Button(action: {
-                    print("Button Tapped")
-                }) {
-                    Image(systemName: "heart.fill")
-                        .foregroundColor(.white)
-                }
-                .buttonStyle(DarkRectButtonStyle())
                 
-                Button(action: {
-                    print("Button Tapped")
-                }) {
-                    Image(systemName: "heart.fill")
-                        .foregroundColor(.white)
+                HStack {
+                    Button(action: {
+                        print("Button Tapped")
+                    }) {
+                        Image(systemName: "heart.fill")
+                            .foregroundColor(.white)
+                    }
+                    .buttonStyle(ColorfulButtonStyle())
+                    
+                    
+                    Toggle(isOn: $isToggled) {
+                        Image(systemName: "heart.fill")
+                            .foregroundColor(.white)
+                    }
+                    .toggleStyle(ColorfulToggleSyle())
                 }
-                .buttonStyle(ColorfulButtonStyle())
-                
-                Toggle(isOn: $isToggled) {
-                    Image(systemName: "heart.fill")
-                        .foregroundColor(.white)
-                }
-                .toggleStyle(ColorfulToggleSyle())
                 
             }
         }
@@ -233,8 +240,12 @@ struct ContentView: View {
 
 struct ContentView_Previews: PreviewProvider {
     static var previews: some View {
-        ContentView()
-            .environment(\.colorScheme, .dark)
+        Group {
+            ContentView()
+                .environment(\.colorScheme, .dark)
+            ContentView()
+                .environment(\.colorScheme, .light)
+        }
     }
 }
 
