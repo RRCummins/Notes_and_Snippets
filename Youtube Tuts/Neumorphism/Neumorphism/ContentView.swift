@@ -9,12 +9,19 @@
 import SwiftUI
 
 extension Color {
-    static let offWhite = Color(red: 225 / 255, green: 225 / 255, blue: 235 / 255)
-    static let darkStart = Color(red: 50 / 255, green: 60 / 255, blue: 65 / 255)
-    static let darkEnd = Color(red: 25 / 255, green: 25 / 255, blue: 30 / 255)
-    static let darkGrey = Color(red: 40 / 255, green: 40 / 255, blue: 50 / 255)
-    static let lightStart = Color(red: 60 / 255, green: 220 / 255, blue: 240 / 255)
-    static let lightEnd = Color(red: 30 / 255, green: 110 / 255, blue: 120 / 255)
+    static let offWhite = Color("offWhite")
+    static let darkStart = Color("darkStart")
+    static let darkEnd = Color("darkEnd")
+    static let darkGrey = Color("darkGrey")
+    static let lightStart = Color("lightStart")
+    static let lightEnd = Color("lightEnd")
+    
+//    static let offWhite = Color(red: 225 / 255, green: 225 / 255, blue: 235 / 255)
+//    static let darkStart = Color(red: 50 / 255, green: 60 / 255, blue: 65 / 255)
+//    static let darkEnd = Color(red: 25 / 255, green: 25 / 255, blue: 30 / 255)
+//    static let darkGrey = Color(red: 40 / 255, green: 40 / 255, blue: 50 / 255)
+//    static let lightStart = Color(red: 60 / 255, green: 220 / 255, blue: 240 / 255)
+//    static let lightEnd = Color(red: 30 / 255, green: 110 / 255, blue: 120 / 255)
 }
 
 extension LinearGradient {
@@ -25,22 +32,39 @@ extension LinearGradient {
 
 struct DarkBackground<S: Shape>: View {
     var isHighlighted: Bool
+    @Environment(\.colorScheme) var colorScheme: ColorScheme
     var shape: S
     
     var body: some View {
         ZStack {
-            if isHighlighted {
-            shape
-                .fill(LinearGradient(Color.darkEnd, Color.darkStart))
-                .overlay(shape.stroke(LinearGradient(Color.darkStart, Color.darkEnd), lineWidth: 4))
-                .shadow(color: Color.darkStart, radius: 10, x: 5, y: 5)
-                .shadow(color: Color.darkEnd, radius: 10, x: -5, y: -5)
-        } else {
-            shape
-                .fill(LinearGradient(Color.darkStart, Color.darkEnd))
-                .overlay(shape.stroke(LinearGradient(Color.darkGrey, Color.darkEnd), lineWidth: 4))
-                .shadow(color: Color.darkStart, radius: 10, x: -10, y: -10)
-                .shadow(color: Color.darkEnd, radius: 10, x: 10, y: 10)
+            if colorScheme == .dark {
+                if isHighlighted {
+                shape
+                    .fill(LinearGradient(Color.darkEnd, Color.darkStart))
+                    .overlay(shape.stroke(LinearGradient(Color.darkStart, Color.darkEnd), lineWidth: 4))
+                    .shadow(color: Color.darkStart, radius: 10, x: 5, y: 5)
+                    .shadow(color: Color.darkEnd, radius: 10, x: -5, y: -5)
+            } else {
+                shape
+                    .fill(LinearGradient(Color.darkStart, Color.darkEnd))
+                    .overlay(shape.stroke(LinearGradient(Color.darkGrey, Color.darkEnd), lineWidth: 4))
+                    .shadow(color: Color.darkStart, radius: 10, x: -10, y: -10)
+                    .shadow(color: Color.darkEnd, radius: 10, x: 10, y: 10)
+                }
+            } else {
+                if isHighlighted {
+                    shape
+                        .fill(LinearGradient(Color.darkStart, Color.darkEnd))
+                        .overlay(shape.stroke(LinearGradient(Color.darkStart, Color.darkEnd), lineWidth: 4))
+                        .shadow(color: Color.darkEnd, radius: 10, x: 5, y: 5)
+                        .shadow(color: Color.darkStart, radius: 10, x: -5, y: -5)
+                } else {
+                    shape
+                        .fill(LinearGradient(Color.darkEnd, Color.darkStart))
+                        .overlay(shape.stroke(LinearGradient(Color.darkGrey, Color.darkEnd), lineWidth: 4))
+                        .shadow(color: Color.darkStart, radius: 10, x: -10, y: -10)
+                        .shadow(color: Color.darkEnd, radius: 10, x: 10, y: 10)
+                }
             }
         }
     }
@@ -210,6 +234,7 @@ struct ContentView: View {
 struct ContentView_Previews: PreviewProvider {
     static var previews: some View {
         ContentView()
+            .environment(\.colorScheme, .dark)
     }
 }
 
