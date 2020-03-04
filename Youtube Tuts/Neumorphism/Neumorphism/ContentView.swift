@@ -153,12 +153,22 @@ struct DarkToggleSyle: ToggleStyle {
     }
 }
 
-struct DarkRectButtonStyle: ButtonStyle {
+struct MonoRectButtonStyle: ButtonStyle {
     func makeBody(configuration: Configuration) -> some View {
         configuration.label
             .padding(30)
             .contentShape(RoundedRectangle(cornerRadius: 15))
             .background(MonoBackground(isHighlighted: configuration.isPressed, shape: RoundedRectangle(cornerRadius: 15)))
+            .animation(nil)
+    }
+}
+
+struct MonoCapsulButtonStyle: ButtonStyle {
+    func makeBody(configuration: Configuration) -> some View {
+        configuration.label
+            .padding(30)
+            .contentShape(Capsule(style: RoundedCornerStyle.circular))
+            .background(MonoBackground(isHighlighted: configuration.isPressed, shape: Capsule(style: RoundedCornerStyle.circular)))
             .animation(nil)
     }
 }
@@ -212,7 +222,7 @@ struct ContentView: View {
                         Image(systemName: "heart.fill")
                             .foregroundColor(.white)
                     }
-                    .buttonStyle(DarkRectButtonStyle())
+                    .buttonStyle(MonoRectButtonStyle())
                     
                 }
                 
