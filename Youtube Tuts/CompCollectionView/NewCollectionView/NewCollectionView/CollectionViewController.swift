@@ -6,6 +6,7 @@
 //  Copyright © 2020 Alex Nagy. All rights reserved.
 //
 
+// Video 2 https://www.youtube.com/watch?v=SBeizUTImoQ
 // https://developer.apple.com/videos/wwdc2019/?q=collection%20view
 
 import UIKit
@@ -33,8 +34,8 @@ class CollectionViewController: UIViewController {
         
         configureCollectionViewLayout()
         configureCollectionViewDataSource()
-        createDummyData()
-//        fetchItems()
+//        createDummyData()
+        fetchItems()
     }
     
 }
