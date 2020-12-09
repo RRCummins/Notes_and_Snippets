@@ -13,6 +13,8 @@
 		1E01E8EE25817A04008FD79B /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1E01E8EC25817A04008FD79B /* Main.storyboard */; };
 		1E01E8F025817A08008FD79B /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 1E01E8EF25817A08008FD79B /* Assets.xcassets */; };
 		1E01E8F325817A08008FD79B /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1E01E8F125817A08008FD79B /* LaunchScreen.storyboard */; };
+		1E01E8FC25817D53008FD79B /* SettingsTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1E01E8FB25817D53008FD79B /* SettingsTableViewCell.swift */; };
+		1E01E8FF2581936A008FD79B /* SwitchTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1E01E8FE25819369008FD79B /* SwitchTableViewCell.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -24,6 +26,8 @@
 		1E01E8EF25817A08008FD79B /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		1E01E8F225817A08008FD79B /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		1E01E8F425817A08008FD79B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		1E01E8FB25817D53008FD79B /* SettingsTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsTableViewCell.swift; sourceTree = "<group>"; };
+		1E01E8FE25819369008FD79B /* SwitchTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SwitchTableViewCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -63,6 +67,8 @@
 				1E01E8EF25817A08008FD79B /* Assets.xcassets */,
 				1E01E8F125817A08008FD79B /* LaunchScreen.storyboard */,
 				1E01E8F425817A08008FD79B /* Info.plist */,
+				1E01E8FB25817D53008FD79B /* SettingsTableViewCell.swift */,
+				1E01E8FE25819369008FD79B /* SwitchTableViewCell.swift */,
 			);
 			path = SettingsExample;
 			sourceTree = "<group>";
@@ -139,6 +145,8 @@
 			files = (
 				1E01E8EB25817A04008FD79B /* ViewController.swift in Sources */,
 				1E01E8E725817A04008FD79B /* AppDelegate.swift in Sources */,
+				1E01E8FF2581936A008FD79B /* SwitchTableViewCell.swift in Sources */,
+				1E01E8FC25817D53008FD79B /* SettingsTableViewCell.swift in Sources */,
 				1E01E8E925817A04008FD79B /* SceneDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
