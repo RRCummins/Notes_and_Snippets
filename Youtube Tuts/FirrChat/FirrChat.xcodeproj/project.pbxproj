@@ -29,7 +29,6 @@
 		1ED03725256C674E00548CDE /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		1ED03727256C675300548CDE /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		1ED0372A256C675300548CDE /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
-		1ED0372C256C675300548CDE /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		1ED03733256C67AC00548CDE /* NOTES.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = NOTES.md; sourceTree = "<group>"; };
 		1ED0373A256C72AF00548CDE /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 		1ED0373E256C72C000548CDE /* RegisterViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterViewController.swift; sourceTree = "<group>"; };
@@ -37,6 +36,7 @@
 		1ED03744256C72F700548CDE /* VideoPlayerViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VideoPlayerViewController.swift; sourceTree = "<group>"; };
 		1ED03747256C731100548CDE /* NewConversationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewConversationViewController.swift; sourceTree = "<group>"; };
 		1ED0374A256C731D00548CDE /* ProfileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileViewController.swift; sourceTree = "<group>"; };
+		1ED0374F256C748E00548CDE /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -54,7 +54,6 @@
 			isa = PBXGroup;
 			children = (
 				1ED0371D256C674E00548CDE /* FirrChat */,
-				1ED0372C256C675300548CDE /* Info.plist */,
 				1ED0371C256C674E00548CDE /* Products */,
 			);
 			sourceTree = "<group>";
@@ -76,6 +75,7 @@
 				1ED03738256C718900548CDE /* Views */,
 				1ED03727256C675300548CDE /* Assets.xcassets */,
 				1ED03734256C711200548CDE /* Controllers */,
+				1ED0374F256C748E00548CDE /* Info.plist */,
 			);
 			path = FirrChat;
 			sourceTree = "<group>";
@@ -84,8 +84,7 @@
 			isa = PBXGroup;
 			children = (
 				1ED03722256C674E00548CDE /* ConversationsViewController.swift */,
-				1ED0373A256C72AF00548CDE /* LoginViewController.swift */,
-				1ED0373E256C72C000548CDE /* RegisterViewController.swift */,
+				1ED03754256C772200548CDE /* Login */,
 				1ED03741256C72E400548CDE /* PhotoViewViewController.swift */,
 				1ED03744256C72F700548CDE /* VideoPlayerViewController.swift */,
 				1ED03747256C731100548CDE /* NewConversationViewController.swift */,
@@ -133,6 +132,15 @@
 				1ED03729256C675300548CDE /* LaunchScreen.storyboard */,
 			);
 			path = Storyboards;
+			sourceTree = "<group>";
+		};
+		1ED03754256C772200548CDE /* Login */ = {
+			isa = PBXGroup;
+			children = (
+				1ED0373A256C72AF00548CDE /* LoginViewController.swift */,
+				1ED0373E256C72C000548CDE /* RegisterViewController.swift */,
+			);
+			path = Login;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
