@@ -3,7 +3,7 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 51;
 	objects = {
 
 /* Begin PBXBuildFile section */
@@ -27,6 +27,8 @@
 		1E40A05225CCE668004AD3B4 /* SearchResultsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1E40A05125CCE668004AD3B4 /* SearchResultsViewController.swift */; };
 		1E40A05525CCE6D8004AD3B4 /* PostEditorViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1E40A05425CCE6D8004AD3B4 /* PostEditorViewController.swift */; };
 		1E40A05825CCE6E9004AD3B4 /* PublishPostViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1E40A05725CCE6E9004AD3B4 /* PublishPostViewController.swift */; };
+		1E40A07025D201CA004AD3B4 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 1E40A06F25D201CA004AD3B4 /* GoogleService-Info.plist */; };
+		FA887D05A6827D37D00B387A /* Pods_InstaScroll.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BD4BEE564E61F0DC1FA0F73A /* Pods_InstaScroll.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -52,6 +54,10 @@
 		1E40A05125CCE668004AD3B4 /* SearchResultsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchResultsViewController.swift; sourceTree = "<group>"; };
 		1E40A05425CCE6D8004AD3B4 /* PostEditorViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostEditorViewController.swift; sourceTree = "<group>"; };
 		1E40A05725CCE6E9004AD3B4 /* PublishPostViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PublishPostViewController.swift; sourceTree = "<group>"; };
+		1E40A06F25D201CA004AD3B4 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		3AA3ABBBF324010A520D0B83 /* Pods-InstaScroll.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-InstaScroll.release.xcconfig"; path = "Target Support Files/Pods-InstaScroll/Pods-InstaScroll.release.xcconfig"; sourceTree = "<group>"; };
+		B12ECF2A9B28BECFDF222B51 /* Pods-InstaScroll.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-InstaScroll.debug.xcconfig"; path = "Target Support Files/Pods-InstaScroll/Pods-InstaScroll.debug.xcconfig"; sourceTree = "<group>"; };
+		BD4BEE564E61F0DC1FA0F73A /* Pods_InstaScroll.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_InstaScroll.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -59,6 +65,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				FA887D05A6827D37D00B387A /* Pods_InstaScroll.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -70,6 +77,8 @@
 			children = (
 				1E40A00B25CCE161004AD3B4 /* InstaScroll */,
 				1E40A00A25CCE161004AD3B4 /* Products */,
+				4D338B78260D67461BDF4E64 /* Pods */,
+				CDB5DB3F0DA2A14A5BC8A3AF /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -112,6 +121,7 @@
 		1E40A02425CCE182004AD3B4 /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				1E40A06F25D201CA004AD3B4 /* GoogleService-Info.plist */,
 				1E40A00C25CCE161004AD3B4 /* AppDelegate.swift */,
 				1E40A00E25CCE161004AD3B4 /* SceneDelegate.swift */,
 			);
@@ -173,6 +183,23 @@
 			path = Onboarding;
 			sourceTree = "<group>";
 		};
+		4D338B78260D67461BDF4E64 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				B12ECF2A9B28BECFDF222B51 /* Pods-InstaScroll.debug.xcconfig */,
+				3AA3ABBBF324010A520D0B83 /* Pods-InstaScroll.release.xcconfig */,
+			);
+			path = Pods;
+			sourceTree = "<group>";
+		};
+		CDB5DB3F0DA2A14A5BC8A3AF /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				BD4BEE564E61F0DC1FA0F73A /* Pods_InstaScroll.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -180,9 +207,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 1E40A01D25CCE165004AD3B4 /* Build configuration list for PBXNativeTarget "InstaScroll" */;
 			buildPhases = (
+				F02031A170D8AB5BFE456B07 /* [CP] Check Pods Manifest.lock */,
 				1E40A00525CCE161004AD3B4 /* Sources */,
 				1E40A00625CCE161004AD3B4 /* Frameworks */,
 				1E40A00725CCE161004AD3B4 /* Resources */,
+				68187C17E8D0CE040854114A /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -233,10 +262,53 @@
 				1E40A01925CCE164004AD3B4 /* LaunchScreen.storyboard in Resources */,
 				1E40A01625CCE164004AD3B4 /* Assets.xcassets in Resources */,
 				1E40A01425CCE161004AD3B4 /* Main.storyboard in Resources */,
+				1E40A07025D201CA004AD3B4 /* GoogleService-Info.plist in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		68187C17E8D0CE040854114A /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-InstaScroll/Pods-InstaScroll-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-InstaScroll/Pods-InstaScroll-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-InstaScroll/Pods-InstaScroll-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		F02031A170D8AB5BFE456B07 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-InstaScroll-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		1E40A00525CCE161004AD3B4 /* Sources */ = {
@@ -403,6 +475,7 @@
 		};
 		1E40A01E25CCE165004AD3B4 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = B12ECF2A9B28BECFDF222B51 /* Pods-InstaScroll.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
@@ -422,6 +495,7 @@
 		};
 		1E40A01F25CCE165004AD3B4 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 3AA3ABBBF324010A520D0B83 /* Pods-InstaScroll.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
