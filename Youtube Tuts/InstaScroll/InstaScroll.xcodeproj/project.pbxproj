@@ -28,6 +28,9 @@
 		1E40A05525CCE6D8004AD3B4 /* PostEditorViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1E40A05425CCE6D8004AD3B4 /* PostEditorViewController.swift */; };
 		1E40A05825CCE6E9004AD3B4 /* PublishPostViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1E40A05725CCE6E9004AD3B4 /* PublishPostViewController.swift */; };
 		1E40A07025D201CA004AD3B4 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 1E40A06F25D201CA004AD3B4 /* GoogleService-Info.plist */; };
+		1E40A07625D24ADA004AD3B4 /* DatabaseManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1E40A07525D24ADA004AD3B4 /* DatabaseManager.swift */; };
+		1E40A07925D24BFC004AD3B4 /* AuthManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1E40A07825D24BFC004AD3B4 /* AuthManager.swift */; };
+		1E40A07C25D24C4D004AD3B4 /* StorageManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1E40A07B25D24C4D004AD3B4 /* StorageManager.swift */; };
 		FA887D05A6827D37D00B387A /* Pods_InstaScroll.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BD4BEE564E61F0DC1FA0F73A /* Pods_InstaScroll.framework */; };
 /* End PBXBuildFile section */
 
@@ -55,6 +58,9 @@
 		1E40A05425CCE6D8004AD3B4 /* PostEditorViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostEditorViewController.swift; sourceTree = "<group>"; };
 		1E40A05725CCE6E9004AD3B4 /* PublishPostViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PublishPostViewController.swift; sourceTree = "<group>"; };
 		1E40A06F25D201CA004AD3B4 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		1E40A07525D24ADA004AD3B4 /* DatabaseManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DatabaseManager.swift; sourceTree = "<group>"; };
+		1E40A07825D24BFC004AD3B4 /* AuthManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthManager.swift; sourceTree = "<group>"; };
+		1E40A07B25D24C4D004AD3B4 /* StorageManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StorageManager.swift; sourceTree = "<group>"; };
 		3AA3ABBBF324010A520D0B83 /* Pods-InstaScroll.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-InstaScroll.release.xcconfig"; path = "Target Support Files/Pods-InstaScroll/Pods-InstaScroll.release.xcconfig"; sourceTree = "<group>"; };
 		B12ECF2A9B28BECFDF222B51 /* Pods-InstaScroll.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-InstaScroll.debug.xcconfig"; path = "Target Support Files/Pods-InstaScroll/Pods-InstaScroll.debug.xcconfig"; sourceTree = "<group>"; };
 		BD4BEE564E61F0DC1FA0F73A /* Pods_InstaScroll.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_InstaScroll.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -124,6 +130,9 @@
 				1E40A06F25D201CA004AD3B4 /* GoogleService-Info.plist */,
 				1E40A00C25CCE161004AD3B4 /* AppDelegate.swift */,
 				1E40A00E25CCE161004AD3B4 /* SceneDelegate.swift */,
+				1E40A07525D24ADA004AD3B4 /* DatabaseManager.swift */,
+				1E40A07825D24BFC004AD3B4 /* AuthManager.swift */,
+				1E40A07B25D24C4D004AD3B4 /* StorageManager.swift */,
 			);
 			path = Resources;
 			sourceTree = "<group>";
@@ -162,14 +171,7 @@
 			isa = PBXGroup;
 			children = (
 				1E40A03625CCE32E004AD3B4 /* Onboarding */,
-				1E40A03E25CCE370004AD3B4 /* PostViewController.swift */,
-				1E40A04125CCE395004AD3B4 /* EditProfileViewController.swift */,
-				1E40A04425CCE3AA004AD3B4 /* ListViewController.swift */,
-				1E40A04A25CCE419004AD3B4 /* SettingsViewController.swift */,
-				1E40A04E25CCE653004AD3B4 /* SearchViewController.swift */,
-				1E40A05125CCE668004AD3B4 /* SearchResultsViewController.swift */,
-				1E40A05425CCE6D8004AD3B4 /* PostEditorViewController.swift */,
-				1E40A05725CCE6E9004AD3B4 /* PublishPostViewController.swift */,
+				1E40A07325D24A15004AD3B4 /* General */,
 			);
 			path = Other;
 			sourceTree = "<group>";
@@ -181,6 +183,21 @@
 				1E40A03B25CCE356004AD3B4 /* RegistrationViewController.swift */,
 			);
 			path = Onboarding;
+			sourceTree = "<group>";
+		};
+		1E40A07325D24A15004AD3B4 /* General */ = {
+			isa = PBXGroup;
+			children = (
+				1E40A03E25CCE370004AD3B4 /* PostViewController.swift */,
+				1E40A04125CCE395004AD3B4 /* EditProfileViewController.swift */,
+				1E40A04425CCE3AA004AD3B4 /* ListViewController.swift */,
+				1E40A04A25CCE419004AD3B4 /* SettingsViewController.swift */,
+				1E40A04E25CCE653004AD3B4 /* SearchViewController.swift */,
+				1E40A05125CCE668004AD3B4 /* SearchResultsViewController.swift */,
+				1E40A05425CCE6D8004AD3B4 /* PostEditorViewController.swift */,
+				1E40A05725CCE6E9004AD3B4 /* PublishPostViewController.swift */,
+			);
+			path = General;
 			sourceTree = "<group>";
 		};
 		4D338B78260D67461BDF4E64 /* Pods */ = {
@@ -322,12 +339,15 @@
 				1E40A02C25CCE297004AD3B4 /* CameraViewController.swift in Sources */,
 				1E40A05225CCE668004AD3B4 /* SearchResultsViewController.swift in Sources */,
 				1E40A05525CCE6D8004AD3B4 /* PostEditorViewController.swift in Sources */,
+				1E40A07C25D24C4D004AD3B4 /* StorageManager.swift in Sources */,
 				1E40A01125CCE161004AD3B4 /* HomeViewController.swift in Sources */,
+				1E40A07625D24ADA004AD3B4 /* DatabaseManager.swift in Sources */,
 				1E40A03C25CCE356004AD3B4 /* RegistrationViewController.swift in Sources */,
 				1E40A03F25CCE370004AD3B4 /* PostViewController.swift in Sources */,
 				1E40A02F25CCE2AF004AD3B4 /* NotificationsViewController.swift in Sources */,
 				1E40A04F25CCE653004AD3B4 /* SearchViewController.swift in Sources */,
 				1E40A04B25CCE419004AD3B4 /* SettingsViewController.swift in Sources */,
+				1E40A07925D24BFC004AD3B4 /* AuthManager.swift in Sources */,
 				1E40A03825CCE348004AD3B4 /* LoginViewController.swift in Sources */,
 				1E40A03225CCE2C1004AD3B4 /* ProfileViewController.swift in Sources */,
 				1E40A00D25CCE161004AD3B4 /* AppDelegate.swift in Sources */,
