@@ -28,6 +28,7 @@ class LoginViewController: UIViewController {
     
     private let passwordField: UITextField = {
         let field = UITextField()
+        field.isSecureTextEntry = true
         field.placeholder = "Password"
         field.returnKeyType = .continue
         field.leftViewMode = .always
@@ -205,9 +206,36 @@ class LoginViewController: UIViewController {
             return
         }
         
+        var username: String?
+        var email: String?
+        
         // login functionality
+        if usernameEmail.contains("@"), usernameEmail.contains(".") {
+            // email
+            email = usernameEmail
+        } else {
+            // username
+            username = usernameEmail
+        }
         
-        
+        AuthManager.shared.loginUser(username: username, email: email, password: password) { success in
+            DispatchQueue.main.async {
+                if success {
+                                // User loged in
+                    self.dismiss(animated: true, completion: nil)
+                            } else {
+                                // error occurred
+                                let alert = UIAlertController(title: "Log in Error",
+                                                              message: "We were unable to log you in.",
+                                                              preferredStyle: .alert)
+                                alert.addAction(UIAlertAction(title: "Dismiss",
+                                                              style: .cancel,
+                                                              handler: nil))
+                                self.present(alert, animated: true)
+                            }
+            }
+            
+        }
         
     }
     
@@ -230,7 +258,8 @@ class LoginViewController: UIViewController {
     
     @objc private func didTapCreateAccountButton() {
         let vc = RegistrationViewController()
-        present(vc, animated: true)
+        vc.title = "Create Account"
+        present(UINavigationController(rootViewController: vc), animated: true)
     }
     
         

@@ -14,6 +14,13 @@ class HomeViewController: UIViewController {
         super.viewDidLoad()
 
         handleNotAuthenticated()
+        
+//        // Auto sign out for debug
+//        do {
+//            try Auth.auth().signOut()
+//        } catch {
+//            print("failed to sign out")
+//        }
     }
     
     override func viewDidAppear(_ animated: Bool) {
