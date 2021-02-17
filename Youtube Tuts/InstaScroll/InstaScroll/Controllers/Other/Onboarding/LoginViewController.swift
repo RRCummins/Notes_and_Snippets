@@ -217,26 +217,27 @@ class LoginViewController: UIViewController {
             // username
             username = usernameEmail
         }
+//        print(username)
+//        print(email)
+//        print(password)
         
         AuthManager.shared.loginUser(username: username, email: email, password: password) { success in
             DispatchQueue.main.async {
                 if success {
-                                // User loged in
+                    // User loged in
                     self.dismiss(animated: true, completion: nil)
-                            } else {
-                                // error occurred
-                                let alert = UIAlertController(title: "Log in Error",
-                                                              message: "We were unable to log you in.",
-                                                              preferredStyle: .alert)
-                                alert.addAction(UIAlertAction(title: "Dismiss",
-                                                              style: .cancel,
-                                                              handler: nil))
-                                self.present(alert, animated: true)
-                            }
+                } else {
+                    // error occurred
+                    let alert = UIAlertController(title: "Log in Error",
+                                                  message: "We were unable to log you in.",
+                                                  preferredStyle: .alert)
+                    alert.addAction(UIAlertAction(title: "Dismiss",
+                                                  style: .cancel,
+                                                  handler: nil))
+                    self.present(alert, animated: true)
+                }
             }
-            
         }
-        
     }
     
     @objc private func didTapTermsButton() {

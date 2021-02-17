@@ -9,12 +9,14 @@ import FirebaseAuth
 import UIKit
 
 class HomeViewController: UIViewController {
+    
 
     override func viewDidLoad() {
         super.viewDidLoad()
 
         handleNotAuthenticated()
-        
+//        selectedIndex = 0
+//        tabBarController?.selectedIndex = 0
 //        // Auto sign out for debug
 //        do {
 //            try Auth.auth().signOut()
@@ -30,7 +32,7 @@ class HomeViewController: UIViewController {
     }
     
     func handleNotAuthenticated() {
-        // CHeck auth status
+        // Check auth status
         if Auth.auth().currentUser == nil {
             // Show login
             let loginVC = LoginViewController()
