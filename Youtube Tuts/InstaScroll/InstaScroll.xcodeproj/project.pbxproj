@@ -31,6 +31,10 @@
 		1E40A07625D24ADA004AD3B4 /* DatabaseManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1E40A07525D24ADA004AD3B4 /* DatabaseManager.swift */; };
 		1E40A07925D24BFC004AD3B4 /* AuthManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1E40A07825D24BFC004AD3B4 /* AuthManager.swift */; };
 		1E40A07C25D24C4D004AD3B4 /* StorageManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1E40A07B25D24C4D004AD3B4 /* StorageManager.swift */; };
+		1E40C2E325DCAA6500C55FAD /* IGFeedPostTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1E40C2E225DCAA6500C55FAD /* IGFeedPostTableViewCell.swift */; };
+		1E40C2E725DDDF7100C55FAD /* IGFeedPostHeaderTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1E40C2E625DDDF7100C55FAD /* IGFeedPostHeaderTableViewCell.swift */; };
+		1E40C2EA25DDDF9A00C55FAD /* IGFeedPostActionsTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1E40C2E925DDDF9A00C55FAD /* IGFeedPostActionsTableViewCell.swift */; };
+		1E40C2ED25DDDFB900C55FAD /* IGFeedPostGeneralTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1E40C2EC25DDDFB900C55FAD /* IGFeedPostGeneralTableViewCell.swift */; };
 		1EE2E50525D333A700913111 /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1EE2E50425D333A700913111 /* Extensions.swift */; };
 		1EE2E50825D3366200913111 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1EE2E50725D3366200913111 /* Constants.swift */; };
 		FA887D05A6827D37D00B387A /* Pods_InstaScroll.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BD4BEE564E61F0DC1FA0F73A /* Pods_InstaScroll.framework */; };
@@ -63,6 +67,10 @@
 		1E40A07525D24ADA004AD3B4 /* DatabaseManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DatabaseManager.swift; sourceTree = "<group>"; };
 		1E40A07825D24BFC004AD3B4 /* AuthManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthManager.swift; sourceTree = "<group>"; };
 		1E40A07B25D24C4D004AD3B4 /* StorageManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StorageManager.swift; sourceTree = "<group>"; };
+		1E40C2E225DCAA6500C55FAD /* IGFeedPostTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IGFeedPostTableViewCell.swift; sourceTree = "<group>"; };
+		1E40C2E625DDDF7100C55FAD /* IGFeedPostHeaderTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IGFeedPostHeaderTableViewCell.swift; sourceTree = "<group>"; };
+		1E40C2E925DDDF9A00C55FAD /* IGFeedPostActionsTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IGFeedPostActionsTableViewCell.swift; sourceTree = "<group>"; };
+		1E40C2EC25DDDFB900C55FAD /* IGFeedPostGeneralTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IGFeedPostGeneralTableViewCell.swift; sourceTree = "<group>"; };
 		1EE2E50425D333A700913111 /* Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Extensions.swift; sourceTree = "<group>"; };
 		1EE2E50725D3366200913111 /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 		3AA3ABBBF324010A520D0B83 /* Pods-InstaScroll.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-InstaScroll.release.xcconfig"; path = "Target Support Files/Pods-InstaScroll/Pods-InstaScroll.release.xcconfig"; sourceTree = "<group>"; };
@@ -146,6 +154,7 @@
 		1E40A02525CCE1AD004AD3B4 /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				1EF354BC25DCA8810013E54E /* Cells */,
 				1E40A01525CCE164004AD3B4 /* Assets.xcassets */,
 				1E40A02625CCE201004AD3B4 /* Storyboards */,
 			);
@@ -204,6 +213,25 @@
 				1E40A05725CCE6E9004AD3B4 /* PublishPostViewController.swift */,
 			);
 			path = General;
+			sourceTree = "<group>";
+		};
+		1E40C2E525DDDF4B00C55FAD /* Home Feed */ = {
+			isa = PBXGroup;
+			children = (
+				1E40C2E225DCAA6500C55FAD /* IGFeedPostTableViewCell.swift */,
+				1E40C2E625DDDF7100C55FAD /* IGFeedPostHeaderTableViewCell.swift */,
+				1E40C2E925DDDF9A00C55FAD /* IGFeedPostActionsTableViewCell.swift */,
+				1E40C2EC25DDDFB900C55FAD /* IGFeedPostGeneralTableViewCell.swift */,
+			);
+			path = "Home Feed";
+			sourceTree = "<group>";
+		};
+		1EF354BC25DCA8810013E54E /* Cells */ = {
+			isa = PBXGroup;
+			children = (
+				1E40C2E525DDDF4B00C55FAD /* Home Feed */,
+			);
+			path = Cells;
 			sourceTree = "<group>";
 		};
 		4D338B78260D67461BDF4E64 /* Pods */ = {
@@ -342,10 +370,13 @@
 				1EE2E50825D3366200913111 /* Constants.swift in Sources */,
 				1E40A02925CCE26A004AD3B4 /* ExploreViewController.swift in Sources */,
 				1E40A05825CCE6E9004AD3B4 /* PublishPostViewController.swift in Sources */,
+				1E40C2E725DDDF7100C55FAD /* IGFeedPostHeaderTableViewCell.swift in Sources */,
 				1E40A04525CCE3AA004AD3B4 /* ListViewController.swift in Sources */,
 				1E40A02C25CCE297004AD3B4 /* CameraViewController.swift in Sources */,
 				1E40A05225CCE668004AD3B4 /* SearchResultsViewController.swift in Sources */,
+				1E40C2ED25DDDFB900C55FAD /* IGFeedPostGeneralTableViewCell.swift in Sources */,
 				1E40A05525CCE6D8004AD3B4 /* PostEditorViewController.swift in Sources */,
+				1E40C2E325DCAA6500C55FAD /* IGFeedPostTableViewCell.swift in Sources */,
 				1E40A07C25D24C4D004AD3B4 /* StorageManager.swift in Sources */,
 				1E40A01125CCE161004AD3B4 /* HomeViewController.swift in Sources */,
 				1E40A07625D24ADA004AD3B4 /* DatabaseManager.swift in Sources */,
@@ -358,6 +389,7 @@
 				1E40A07925D24BFC004AD3B4 /* AuthManager.swift in Sources */,
 				1E40A03825CCE348004AD3B4 /* LoginViewController.swift in Sources */,
 				1E40A03225CCE2C1004AD3B4 /* ProfileViewController.swift in Sources */,
+				1E40C2EA25DDDF9A00C55FAD /* IGFeedPostActionsTableViewCell.swift in Sources */,
 				1E40A00D25CCE161004AD3B4 /* AppDelegate.swift in Sources */,
 				1E40A00F25CCE161004AD3B4 /* SceneDelegate.swift in Sources */,
 			);
