@@ -39,6 +39,7 @@
 		1E71A62125E00069008D2006 /* PhotoCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1E71A62025E00069008D2006 /* PhotoCollectionViewCell.swift */; };
 		1E71A62525E000B7008D2006 /* ProfileInfoHeaderCollectionReusableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1E71A62425E000B7008D2006 /* ProfileInfoHeaderCollectionReusableView.swift */; };
 		1E71A62825E000E7008D2006 /* ProfileTabsCollectionReusableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1E71A62725E000E7008D2006 /* ProfileTabsCollectionReusableView.swift */; };
+		1E71A64025E0200C008D2006 /* Models.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1E71A63F25E0200C008D2006 /* Models.swift */; };
 		1EE2E50525D333A700913111 /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1EE2E50425D333A700913111 /* Extensions.swift */; };
 		1EE2E50825D3366200913111 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1EE2E50725D3366200913111 /* Constants.swift */; };
 		FA887D05A6827D37D00B387A /* Pods_InstaScroll.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BD4BEE564E61F0DC1FA0F73A /* Pods_InstaScroll.framework */; };
@@ -79,6 +80,7 @@
 		1E71A62025E00069008D2006 /* PhotoCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoCollectionViewCell.swift; sourceTree = "<group>"; };
 		1E71A62425E000B7008D2006 /* ProfileInfoHeaderCollectionReusableView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileInfoHeaderCollectionReusableView.swift; sourceTree = "<group>"; };
 		1E71A62725E000E7008D2006 /* ProfileTabsCollectionReusableView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileTabsCollectionReusableView.swift; sourceTree = "<group>"; };
+		1E71A63F25E0200C008D2006 /* Models.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Models.swift; sourceTree = "<group>"; };
 		1EE2E50425D333A700913111 /* Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Extensions.swift; sourceTree = "<group>"; };
 		1EE2E50725D3366200913111 /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 		3AA3ABBBF324010A520D0B83 /* Pods-InstaScroll.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-InstaScroll.release.xcconfig"; path = "Target Support Files/Pods-InstaScroll/Pods-InstaScroll.release.xcconfig"; sourceTree = "<group>"; };
@@ -140,6 +142,7 @@
 		1E40A02225CCE177004AD3B4 /* Models */ = {
 			isa = PBXGroup;
 			children = (
+				1E71A63F25E0200C008D2006 /* Models.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -410,6 +413,7 @@
 				1E40A04F25CCE653004AD3B4 /* SearchViewController.swift in Sources */,
 				1E40A04B25CCE419004AD3B4 /* SettingsViewController.swift in Sources */,
 				1E40A07925D24BFC004AD3B4 /* AuthManager.swift in Sources */,
+				1E71A64025E0200C008D2006 /* Models.swift in Sources */,
 				1E40A03825CCE348004AD3B4 /* LoginViewController.swift in Sources */,
 				1E40A03225CCE2C1004AD3B4 /* ProfileViewController.swift in Sources */,
 				1E40C2EA25DDDF9A00C55FAD /* IGFeedPostActionsTableViewCell.swift in Sources */,
