@@ -80,7 +80,7 @@ final class ProfileInfoHeaderCollectionReusableView: UICollectionReusableView {
         super.init(frame: frame)
         addSubviews()
         addButtonActions()
-        //        backgroundColor = .systemBlue
+        backgroundColor = .systemBackground
         clipsToBounds = true
     }
     
@@ -168,11 +168,11 @@ final class ProfileInfoHeaderCollectionReusableView: UICollectionReusableView {
                                   action: #selector(didTapFollowingButton),
                                   for: .touchUpInside)
         postsButton.addTarget(self,
-                                  action: #selector(didTapPostsButton),
-                                  for: .touchUpInside)
+                              action: #selector(didTapPostsButton),
+                              for: .touchUpInside)
         editProfileButton.addTarget(self,
-                                  action: #selector(didTapEditProfileButton),
-                                  for: .touchUpInside)
+                                    action: #selector(didTapEditProfileButton),
+                                    for: .touchUpInside)
         
     }
     
