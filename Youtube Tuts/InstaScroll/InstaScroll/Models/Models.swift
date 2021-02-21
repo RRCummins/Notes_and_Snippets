@@ -15,6 +15,7 @@ public struct User {
     let userName: String
     let bio: String
     let name: (first: String, last: String)
+    let profilePhotoURL: URL
     let birthDate: Date
     let gender: Gender
     let counts: UserCount
@@ -34,7 +35,7 @@ public enum UserPostType {
 /// Represents a user post
 public struct UserPost {
     let identifier: String
-    let PostType: UserPostType
+    let postType: UserPostType
     let thumbnailImage: URL
     let postURL: URL // either video url or full resolution photo
     let caption: String?
