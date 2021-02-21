@@ -1,18 +1,19 @@
 //
-//  IGFeedPostTableViewCell.swift
+//  IGFeedPostActionsTableViewCell.swift
 //  InstaScroll
 //
-//  Created by Ryan Cummins on 2/16/21.
+//  Created by Ryan Cummins on 2/17/21.
 //
 
 import UIKit
 
-final class IGFeedPostTableViewCell: UITableViewCell {
-    
-    static let identifier = "IGFeedPostTableViewCell"
+class IGFeedPostActionsTableViewCell: UITableViewCell {
+
+    static let identifier = "IGFeedPostActionsTableViewCell"
 
     override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
         super.init(style: style, reuseIdentifier: reuseIdentifier)
+        contentView.backgroundColor = .systemGreen
     }
     
     required init?(coder: NSCoder) {
@@ -21,6 +22,10 @@ final class IGFeedPostTableViewCell: UITableViewCell {
     
     public func configure() {
         // Configure the cell
+    }
+    
+    override func layoutSubviews() {
+        super.layoutSubviews()
     }
 
 }
