@@ -13,6 +13,7 @@
 		1E71A66625E47134008D2006 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 1E71A66525E47134008D2006 /* Assets.xcassets */; };
 		1E71A66925E47134008D2006 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1E71A66725E47134008D2006 /* LaunchScreen.storyboard */; };
 		1ECD691D25E4825D00A14D3B /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1ECD691C25E4825D00A14D3B /* Extensions.swift */; };
+		1ECD692025E8774000A14D3B /* AuthReponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1ECD691F25E8774000A14D3B /* AuthReponse.swift */; };
 		1EFCE12925E474DA00FF3063 /* TabBarViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1EFCE12825E474DA00FF3063 /* TabBarViewController.swift */; };
 		1EFCE12C25E4751800FF3063 /* SearchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1EFCE12B25E4751800FF3063 /* SearchViewController.swift */; };
 		1EFCE13025E4752800FF3063 /* LibraryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1EFCE12F25E4752800FF3063 /* LibraryViewController.swift */; };
@@ -41,6 +42,7 @@
 		1E71A66825E47134008D2006 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		1E71A66A25E47134008D2006 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		1ECD691C25E4825D00A14D3B /* Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Extensions.swift; sourceTree = "<group>"; };
+		1ECD691F25E8774000A14D3B /* AuthReponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthReponse.swift; sourceTree = "<group>"; };
 		1EFCE12825E474DA00FF3063 /* TabBarViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBarViewController.swift; sourceTree = "<group>"; };
 		1EFCE12B25E4751800FF3063 /* SearchViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchViewController.swift; sourceTree = "<group>"; };
 		1EFCE12F25E4752800FF3063 /* LibraryViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LibraryViewController.swift; sourceTree = "<group>"; };
@@ -125,6 +127,7 @@
 				1EFCE15625E4765B00FF3063 /* AudioTrack.swift */,
 				1EFCE15925E4766500FF3063 /* Artist.swift */,
 				1EFCE15C25E4767100FF3063 /* UserProfile.swift */,
+				1ECD691F25E8774000A14D3B /* AuthReponse.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -261,6 +264,7 @@
 				1EFCE15125E4763400FF3063 /* HapticsManager.swift in Sources */,
 				1EFCE15725E4765B00FF3063 /* AudioTrack.swift in Sources */,
 				1E71A66125E47130008D2006 /* HomeViewController.swift in Sources */,
+				1ECD692025E8774000A14D3B /* AuthReponse.swift in Sources */,
 				1EFCE13525E475A700FF3063 /* AuthViewController.swift in Sources */,
 				1E71A65D25E47130008D2006 /* AppDelegate.swift in Sources */,
 				1EFCE15D25E4767100FF3063 /* UserProfile.swift in Sources */,
