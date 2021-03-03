@@ -3,11 +3,24 @@
 ## Buttons
 
 ```swift
-
+private let postsButton: UIButton = {
+        let button = UIButton()
+        button.setTitle("Posts", for: .normal)
+        button.backgroundColor = .secondarySystemBackground
+        button.setTitleColor(.label, for: .normal)
+        return button
+    }()
 ```
 
 ```swift
-
+private let likeButton: UIButton = {
+        let button = UIButton()
+        let config = UIImage.SymbolConfiguration(pointSize: 30, weight: .thin)
+        let image = UIImage(systemName: "heart", withConfiguration: config)
+        button.setImage(image, for: .normal)
+        button.tintColor = .label
+        return button
+    }()
 ```
 ## ImageViews
 
