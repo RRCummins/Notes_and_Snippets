@@ -18,6 +18,14 @@
 ## Labels
 
 ```swift
+private let usernameLabel: UILabel = {
+        let label = UILabel()
+        label.textColor = .label
+        label.numberOfLines = 1
+        label.font = .systemFont(ofSize: 18, weight: .medium)
+        label.test = "example"
+        return label
+    }()
 
 ```
 
