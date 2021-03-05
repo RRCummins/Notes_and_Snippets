@@ -31,6 +31,7 @@ final class APICaller {
                 }
                 
                 do {
+//                    let result = try JSONSerialization.data(withJSONObject: data, options: .fragmentsAllowed)
                     let result = try JSONDecoder().decode(UserProfile.self, from: data)
                     print(result, #fileID, #function, #line)
                     completion(.success(result))
