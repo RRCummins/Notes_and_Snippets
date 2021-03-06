@@ -92,9 +92,9 @@ final class APICaller {
         }
     }
     
-    public func getRecommendations(genres: Set<String>, completion: @escaping ((Result<String, Error>) -> Void)) {
+    public func getRecommendations(genres: Set<String>, completion: @escaping ((Result<RecommendationsResponse, Error>) -> Void)) {
         let seeds = genres.joined(separator: ",")
-            createRequest(with: URL(string: Constants.baseAPIURL + "/recommendations?seed_genres=\(seeds)"),
+            createRequest(with: URL(string: Constants.baseAPIURL + "/recommendations?limit=40&seed_genres=\(seeds)"),
                           type: .GET) { (request) in
                 print(request.url?.absoluteString)
                 let task = URLSession.shared.dataTask(with: request) { (data, _, error) in
@@ -104,10 +104,11 @@ final class APICaller {
                     }
     
                     do {
-                        let json = try JSONSerialization.jsonObject(with: data, options: .allowFragments)
-    //                    let result = try JSONDecoder().decode(FeaturedPlaylistResponse.self, from: data)
-    //                    completion(.success(result))
-                        print(json, #fileID, #function, #line)
+//                        let json = try JSONSerialization.jsonObject(with: data, options: .allowFragments)
+                        let result = try JSONDecoder().decode(RecommendationsResponse.self, from: data)
+                        completion(.success(result))
+//                        print(json, #fileID, #function, #line)
+//                        print(result, #fileID, #function, #line)
                     }
                     catch {
                         completion(.failure(error))
@@ -132,7 +133,7 @@ final class APICaller {
                     let result = try JSONDecoder().decode(RecommendedGenresResponse.self, from: data)
                     completion(.success(result))
                     //                    print(json, #fileID, #function, #line)
-                    print(result, #fileID, #function, #line)
+//                    print(result, #fileID, #function, #line)
                 }
                 catch {
                     completion(.failure(error))

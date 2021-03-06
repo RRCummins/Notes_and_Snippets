@@ -18,6 +18,7 @@
 		1E7FC76B25F2F93500D9FE6B /* APIImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1E7FC76A25F2F93500D9FE6B /* APIImage.swift */; };
 		1E7FC77425F3011400D9FE6B /* FeaturedPlaylistsResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1E7FC77325F3011400D9FE6B /* FeaturedPlaylistsResponse.swift */; };
 		1E7FC77B25F307CA00D9FE6B /* RecomendedGenresResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1E7FC77A25F307CA00D9FE6B /* RecomendedGenresResponse.swift */; };
+		1E7FC78225F3D42A00D9FE6B /* RecommendationsResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1E7FC78125F3D42A00D9FE6B /* RecommendationsResponse.swift */; };
 		1ECD691D25E4825D00A14D3B /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1ECD691C25E4825D00A14D3B /* Extensions.swift */; };
 		1ECD692025E8774000A14D3B /* AuthReponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1ECD691F25E8774000A14D3B /* AuthReponse.swift */; };
 		1EFCE12925E474DA00FF3063 /* TabBarViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1EFCE12825E474DA00FF3063 /* TabBarViewController.swift */; };
@@ -52,6 +53,7 @@
 		1E7FC76A25F2F93500D9FE6B /* APIImage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIImage.swift; sourceTree = "<group>"; };
 		1E7FC77325F3011400D9FE6B /* FeaturedPlaylistsResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeaturedPlaylistsResponse.swift; sourceTree = "<group>"; };
 		1E7FC77A25F307CA00D9FE6B /* RecomendedGenresResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecomendedGenresResponse.swift; sourceTree = "<group>"; };
+		1E7FC78125F3D42A00D9FE6B /* RecommendationsResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecommendationsResponse.swift; sourceTree = "<group>"; };
 		1ECD691C25E4825D00A14D3B /* Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Extensions.swift; sourceTree = "<group>"; };
 		1ECD691F25E8774000A14D3B /* AuthReponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthReponse.swift; sourceTree = "<group>"; };
 		1EFCE12825E474DA00FF3063 /* TabBarViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBarViewController.swift; sourceTree = "<group>"; };
@@ -150,6 +152,7 @@
 				1E7FC76A25F2F93500D9FE6B /* APIImage.swift */,
 				1E7FC77325F3011400D9FE6B /* FeaturedPlaylistsResponse.swift */,
 				1E7FC77A25F307CA00D9FE6B /* RecomendedGenresResponse.swift */,
+				1E7FC78125F3D42A00D9FE6B /* RecommendationsResponse.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -348,6 +351,7 @@
 				1EFCE12925E474DA00FF3063 /* TabBarViewController.swift in Sources */,
 				1EFCE15125E4763400FF3063 /* HapticsManager.swift in Sources */,
 				1EFCE15725E4765B00FF3063 /* AudioTrack.swift in Sources */,
+				1E7FC78225F3D42A00D9FE6B /* RecommendationsResponse.swift in Sources */,
 				1E7FC76825F2F74D00D9FE6B /* NewReleasesResponse.swift in Sources */,
 				1E71A66125E47130008D2006 /* HomeViewController.swift in Sources */,
 				1E7FC77B25F307CA00D9FE6B /* RecomendedGenresResponse.swift in Sources */,
