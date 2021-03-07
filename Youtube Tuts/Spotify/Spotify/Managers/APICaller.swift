@@ -94,29 +94,29 @@ final class APICaller {
     
     public func getRecommendations(genres: Set<String>, completion: @escaping ((Result<RecommendationsResponse, Error>) -> Void)) {
         let seeds = genres.joined(separator: ",")
-            createRequest(with: URL(string: Constants.baseAPIURL + "/recommendations?limit=40&seed_genres=\(seeds)"),
-                          type: .GET) { (request) in
-                print(request.url?.absoluteString)
-                let task = URLSession.shared.dataTask(with: request) { (data, _, error) in
-                    guard let data = data, error == nil else {
-                        completion(.failure(APIError.failedToGetData))
-                        return
-                    }
-    
-                    do {
-//                        let json = try JSONSerialization.jsonObject(with: data, options: .allowFragments)
-                        let result = try JSONDecoder().decode(RecommendationsResponse.self, from: data)
-                        completion(.success(result))
-//                        print(json, #fileID, #function, #line)
-//                        print(result, #fileID, #function, #line)
-                    }
-                    catch {
-                        completion(.failure(error))
-                    }
+        createRequest(with: URL(string: Constants.baseAPIURL + "/recommendations?limit=40&seed_genres=\(seeds)"),
+                      type: .GET) { (request) in
+            //                print(request.url?.absoluteString)
+            let task = URLSession.shared.dataTask(with: request) { (data, _, error) in
+                guard let data = data, error == nil else {
+                    completion(.failure(APIError.failedToGetData))
+                    return
                 }
-                task.resume()
+                
+                do {
+                    //                        let json = try JSONSerialization.jsonObject(with: data, options: .allowFragments)
+                    let result = try JSONDecoder().decode(RecommendationsResponse.self, from: data)
+                    completion(.success(result))
+                    //                        print(json, #fileID, #function, #line)
+                    //                        print(result, #fileID, #function, #line)
+                }
+                catch {
+                    completion(.failure(error))
+                }
             }
+            task.resume()
         }
+    }
     
     
     public func getRecommendedGeneres(completion: @escaping ((Result<RecommendedGenresResponse, Error>) -> Void)) {
@@ -133,7 +133,7 @@ final class APICaller {
                     let result = try JSONDecoder().decode(RecommendedGenresResponse.self, from: data)
                     completion(.success(result))
                     //                    print(json, #fileID, #function, #line)
-//                    print(result, #fileID, #function, #line)
+                    //                    print(result, #fileID, #function, #line)
                 }
                 catch {
                     completion(.failure(error))

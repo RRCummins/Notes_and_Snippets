@@ -91,9 +91,73 @@ extension ViewController: UITableViewDelegate, UITableViewDatasource {
 ```
 
 ## CollectionViews
+### Compositional Layout
 
 ```swift
+private let collectionView = UICollectionView(frame: .zero, collectionViewLayout: UICollectionViewCompositionalLayout { (sectionIndex, _) -> NSCollectionLayoutSection? in
+            return SomeViewController.createSectionLayout(section: sectionIndex)
+        }
+    )
+//---------------------------------------------
+// Setup like a vertical Table View
+private static func createSectionLayout(section: Int) ->  NSCollectionLayoutSection {
+        // Item
+        let item = NSCollectionLayoutItem(
+            layoutSize: NSCollectionLayoutSize(widthDimension: .fractionalWidth(1.0),
+                                               heightDimension: .fractionalHeight(1.0)))
+        item.contentInsets = NSDirectionalEdgeInsets(top: 2, leading: 2, bottom: 2, trailing: 2)
+        // Group
+        let group = NSCollectionLayoutGroup.vertical(
+            layoutSize: NSCollectionLayoutSize(widthDimension: .fractionalWidth(1.0),
+                                               heightDimension: .absolute(120)),
+            subitem: item,
+            count: 1)
+        // Section
+        let section = NSCollectionLayoutSection(group: group)
+        return section
+    }
+// Or
+// Setup for horizontal scroll
+private static func createSectionLayout(section: Int) ->  NSCollectionLayoutSection {
+        // Item
+        let item = NSCollectionLayoutItem(
+            layoutSize: NSCollectionLayoutSize(widthDimension: .fractionalWidth(1.0),
+                                               heightDimension: .fractionalHeight(1.0)))
+        item.contentInsets = NSDirectionalEdgeInsets(top: 2, leading: 2, bottom: 2, trailing: 2)
+        // Group
+        let group = NSCollectionLayoutGroup.horizontal(
+            layoutSize: NSCollectionLayoutSize(widthDimension: .fractionalWidth(1.0),
+                                               heightDimension: .absolute(120)),
+            subitem: item,
+            count: 1)
+        // Section
+        let section = NSCollectionLayoutSection(group: group)
+        section.orthogonalScrollingBehavior = .continuous
+        return section
+    }
+//----------------------------------------------
+private func configureCollectionView() {
+        view.addSubview(collectionView)
+        collectionView.register(UICollectionViewCell.self,
+                                forCellWithReuseIdentifier: "cell")
+        collectionView.delegate = self
+        collectionView.dataSource = self
+        collectionView.backgroundColor = .systemBackground
+    }
 
+extension SomeViewController: UICollectionViewDelegate, UICollectionViewDataSource {
+    func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
+        return 20
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
+        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "cell", for: indexPath)
+        cell.backgroundColor = .systemTeal
+        return cell
+    }
+    
+    
+}
 ```
 
 ## Cell Delegate Pattern
