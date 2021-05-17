@@ -33,6 +33,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
             print(success)
         }
         
+        UITabBar.appearance().tintColor = .systemGreen
 //        print(AuthManager.shared.signInURL?.absoluteString)
 
         return true

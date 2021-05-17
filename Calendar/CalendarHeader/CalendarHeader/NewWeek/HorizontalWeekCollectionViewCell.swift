@@ -9,7 +9,7 @@ import UIKit
 
 class HorizontalWeekCollectionViewCell: UICollectionViewCell {
     
-    static let identifier = "HorizontalWeekCollectionViewCell"
+//    static let identifier = "HorizontalWeekCollectionViewCell"
     
     // MARK: - Views
     private let dateLabel: UILabel = {

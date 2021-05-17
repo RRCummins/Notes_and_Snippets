@@ -3,7 +3,7 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 52;
 	objects = {
 
 /* Begin PBXBuildFile section */
@@ -27,6 +27,17 @@
 		1E09DCA3262A5131005836B9 /* DateCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1E09DCA2262A5131005836B9 /* DateCollectionViewCell.swift */; };
 		1E09DCA5262A5172005836B9 /* WeekDayLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1E09DCA4262A5172005836B9 /* WeekDayLabel.swift */; };
 		1E09DCA7262A5267005836B9 /* ScrollTopViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1E09DCA6262A5267005836B9 /* ScrollTopViewController.swift */; };
+		1E27C4FD264336B0004B2FBC /* KVKCalendar in Frameworks */ = {isa = PBXBuildFile; productRef = 1E27C4FC264336B0004B2FBC /* KVKCalendar */; };
+		1E27C501264336F9004B2FBC /* KVKCalViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1E27C500264336F9004B2FBC /* KVKCalViewController.swift */; };
+		1E27C50326434B83004B2FBC /* events.json in Sources */ = {isa = PBXBuildFile; fileRef = 1E27C50226434B83004B2FBC /* events.json */; };
+		1E27C50526434BCD004B2FBC /* CustomDayCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1E27C50426434BCD004B2FBC /* CustomDayCell.swift */; };
+		1E27C50726434CB5004B2FBC /* EventViewer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1E27C50626434CB4004B2FBC /* EventViewer.swift */; };
+		1E27C50C264350E5004B2FBC /* CodeCalViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1E27C50B264350E5004B2FBC /* CodeCalViewController.swift */; };
+		1E27C5112644367F004B2FBC /* CalendarHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1E27C5102644367F004B2FBC /* CalendarHelper.swift */; };
+		1E27C513264436A4004B2FBC /* CalendarCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1E27C512264436A4004B2FBC /* CalendarCell.swift */; };
+		1E27C51626443FC4004B2FBC /* FSCalendar in Frameworks */ = {isa = PBXBuildFile; productRef = 1E27C51526443FC4004B2FBC /* FSCalendar */; };
+		1E27C51826443FE9004B2FBC /* FSViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1E27C51726443FE9004B2FBC /* FSViewController.swift */; };
+		1E27C51B2644BFC0004B2FBC /* CalendarHeader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1E27C51A2644BFBF004B2FBC /* CalendarHeader.swift */; };
 		1EBD8E252638AD4E009CF717 /* HorizontalWeekCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1EBD8E242638AD4E009CF717 /* HorizontalWeekCollectionViewCell.swift */; };
 		1EBD8E272638AD92009CF717 /* HorizontalViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1EBD8E262638AD92009CF717 /* HorizontalViewController.swift */; };
 		1EBD8E292638ADCB009CF717 /* HorizontalDayView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1EBD8E282638ADCB009CF717 /* HorizontalDayView.swift */; };
@@ -55,6 +66,16 @@
 		1E09DCA2262A5131005836B9 /* DateCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DateCollectionViewCell.swift; sourceTree = "<group>"; };
 		1E09DCA4262A5172005836B9 /* WeekDayLabel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeekDayLabel.swift; sourceTree = "<group>"; };
 		1E09DCA6262A5267005836B9 /* ScrollTopViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScrollTopViewController.swift; sourceTree = "<group>"; };
+		1E27C500264336F9004B2FBC /* KVKCalViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KVKCalViewController.swift; sourceTree = "<group>"; };
+		1E27C50226434B83004B2FBC /* events.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = events.json; sourceTree = "<group>"; };
+		1E27C50426434BCD004B2FBC /* CustomDayCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomDayCell.swift; sourceTree = "<group>"; };
+		1E27C50626434CB4004B2FBC /* EventViewer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventViewer.swift; sourceTree = "<group>"; };
+		1E27C50B264350E5004B2FBC /* CodeCalViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CodeCalViewController.swift; sourceTree = "<group>"; };
+		1E27C5102644367F004B2FBC /* CalendarHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalendarHelper.swift; sourceTree = "<group>"; };
+		1E27C512264436A4004B2FBC /* CalendarCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalendarCell.swift; sourceTree = "<group>"; };
+		1E27C51726443FE9004B2FBC /* FSViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FSViewController.swift; sourceTree = "<group>"; };
+		1E27C51926444050004B2FBC /* Objc-Bridge-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Objc-Bridge-Header.h"; sourceTree = "<group>"; };
+		1E27C51A2644BFBF004B2FBC /* CalendarHeader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalendarHeader.swift; sourceTree = "<group>"; };
 		1EBD8E242638AD4E009CF717 /* HorizontalWeekCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HorizontalWeekCollectionViewCell.swift; sourceTree = "<group>"; };
 		1EBD8E262638AD92009CF717 /* HorizontalViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HorizontalViewController.swift; sourceTree = "<group>"; };
 		1EBD8E282638ADCB009CF717 /* HorizontalDayView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HorizontalDayView.swift; sourceTree = "<group>"; };
@@ -65,6 +86,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				1E27C4FD264336B0004B2FBC /* KVKCalendar in Frameworks */,
+				1E27C51626443FC4004B2FBC /* FSCalendar in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -90,6 +113,10 @@
 		1E09DC6A262657A2005836B9 /* CalendarHeader */ = {
 			isa = PBXGroup;
 			children = (
+				1E27C50F264435E3004B2FBC /* FSCal */,
+				1E27C5082643507C004B2FBC /* codecal */,
+				1E27C50226434B83004B2FBC /* events.json */,
+				1E27C4FF264336DE004B2FBC /* KVKCalendar */,
 				1E09DC6B262657A2005836B9 /* AppDelegate.swift */,
 				1E09DC6D262657A2005836B9 /* SceneDelegate.swift */,
 				1E09DC9226290AA7005836B9 /* StartViewController.swift */,
@@ -132,6 +159,36 @@
 			path = MonthPicker;
 			sourceTree = "<group>";
 		};
+		1E27C4FF264336DE004B2FBC /* KVKCalendar */ = {
+			isa = PBXGroup;
+			children = (
+				1E27C500264336F9004B2FBC /* KVKCalViewController.swift */,
+				1E27C50426434BCD004B2FBC /* CustomDayCell.swift */,
+				1E27C50626434CB4004B2FBC /* EventViewer.swift */,
+			);
+			path = KVKCalendar;
+			sourceTree = "<group>";
+		};
+		1E27C5082643507C004B2FBC /* codecal */ = {
+			isa = PBXGroup;
+			children = (
+				1E27C50B264350E5004B2FBC /* CodeCalViewController.swift */,
+				1E27C5102644367F004B2FBC /* CalendarHelper.swift */,
+				1E27C512264436A4004B2FBC /* CalendarCell.swift */,
+				1E27C51926444050004B2FBC /* Objc-Bridge-Header.h */,
+			);
+			path = codecal;
+			sourceTree = "<group>";
+		};
+		1E27C50F264435E3004B2FBC /* FSCal */ = {
+			isa = PBXGroup;
+			children = (
+				1E27C51726443FE9004B2FBC /* FSViewController.swift */,
+				1E27C51A2644BFBF004B2FBC /* CalendarHeader.swift */,
+			);
+			path = FSCal;
+			sourceTree = "<group>";
+		};
 		1EBD8E232638ACFE009CF717 /* NewWeek */ = {
 			isa = PBXGroup;
 			children = (
@@ -159,6 +216,8 @@
 			);
 			name = CalendarHeader;
 			packageProductDependencies = (
+				1E27C4FC264336B0004B2FBC /* KVKCalendar */,
+				1E27C51526443FC4004B2FBC /* FSCalendar */,
 			);
 			productName = CalendarHeader;
 			productReference = 1E09DC68262657A2005836B9 /* CalendarHeader.app */;
@@ -188,6 +247,8 @@
 			);
 			mainGroup = 1E09DC5F262657A2005836B9;
 			packageReferences = (
+				1E27C4FB264336AF004B2FBC /* XCRemoteSwiftPackageReference "KVKCalendar" */,
+				1E27C51426443FC3004B2FBC /* XCRemoteSwiftPackageReference "FSCalendar" */,
 			);
 			productRefGroup = 1E09DC69262657A2005836B9 /* Products */;
 			projectDirPath = "";
@@ -222,15 +283,24 @@
 				1E09DC8B262903F0005836B9 /* Expense.swift in Sources */,
 				1E09DC8F262904AD005836B9 /* CalMonthFooterView.swift in Sources */,
 				1E09DC87262903A7005836B9 /* Month.swift in Sources */,
+				1E27C50326434B83004B2FBC /* events.json in Sources */,
+				1E27C5112644367F004B2FBC /* CalendarHelper.swift in Sources */,
+				1E27C50C264350E5004B2FBC /* CodeCalViewController.swift in Sources */,
 				1E09DCA3262A5131005836B9 /* DateCollectionViewCell.swift in Sources */,
 				1EBD8E252638AD4E009CF717 /* HorizontalWeekCollectionViewCell.swift in Sources */,
 				1EBD8E292638ADCB009CF717 /* HorizontalDayView.swift in Sources */,
 				1E09DC70262657A2005836B9 /* CalMonthViewController.swift in Sources */,
+				1E27C513264436A4004B2FBC /* CalendarCell.swift in Sources */,
 				1E09DC89262903CC005836B9 /* Day.swift in Sources */,
 				1E09DCA5262A5172005836B9 /* WeekDayLabel.swift in Sources */,
 				1E09DC9326290AA7005836B9 /* StartViewController.swift in Sources */,
 				1E09DC9D262A4CBF005836B9 /* Extensions.swift in Sources */,
+				1E27C51826443FE9004B2FBC /* FSViewController.swift in Sources */,
+				1E27C501264336F9004B2FBC /* KVKCalViewController.swift in Sources */,
+				1E27C51B2644BFC0004B2FBC /* CalendarHeader.swift in Sources */,
+				1E27C50726434CB5004B2FBC /* EventViewer.swift in Sources */,
 				1E09DC97262A48AB005836B9 /* Week.swift in Sources */,
+				1E27C50526434BCD004B2FBC /* CustomDayCell.swift in Sources */,
 				1E09DCA7262A5267005836B9 /* ScrollTopViewController.swift in Sources */,
 				1E09DC91262904EB005836B9 /* CalDateCollectionViewCell.swift in Sources */,
 				1E09DC6C262657A2005836B9 /* AppDelegate.swift in Sources */,
@@ -437,6 +507,38 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		1E27C4FB264336AF004B2FBC /* XCRemoteSwiftPackageReference "KVKCalendar" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/kvyatkovskys/KVKCalendar.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 0.4.9;
+			};
+		};
+		1E27C51426443FC3004B2FBC /* XCRemoteSwiftPackageReference "FSCalendar" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/WenchaoD/FSCalendar.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 2.8.2;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		1E27C4FC264336B0004B2FBC /* KVKCalendar */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 1E27C4FB264336AF004B2FBC /* XCRemoteSwiftPackageReference "KVKCalendar" */;
+			productName = KVKCalendar;
+		};
+		1E27C51526443FC4004B2FBC /* FSCalendar */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 1E27C51426443FC3004B2FBC /* XCRemoteSwiftPackageReference "FSCalendar" */;
+			productName = FSCalendar;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = 1E09DC60262657A2005836B9 /* Project object */;
 }

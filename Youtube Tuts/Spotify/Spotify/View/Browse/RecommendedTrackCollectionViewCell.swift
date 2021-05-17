@@ -78,7 +78,7 @@ class RecommendedTrackCollectionViewCell: UICollectionViewCell {
         super.prepareForReuse()
         trackNameLabel.text = nil
         artistNameLabel.text = nil
-        albumCoverImageView.image = nil
+        albumCoverImageView.image = UIImage(systemName: "photo")
     }
     
     public func configure(with viewModel: RecommendedTrackCellViewModel) {

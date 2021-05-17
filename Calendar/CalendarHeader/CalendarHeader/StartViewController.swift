@@ -6,10 +6,11 @@
 //
 
 import UIKit
+import CalendarKit
 
-struct Item {
+struct ItemDatas {
     var date: Date
-    
+
 }
 
 class StartViewController: UIViewController {
@@ -47,7 +48,7 @@ class StartViewController: UIViewController {
         return dateFormatter
     }()
     
-    var item = Item(date: Date())
+    var item = ItemDatas(date: Date())
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -62,7 +63,7 @@ class StartViewController: UIViewController {
         button2.addTarget(self, action: #selector(didTapButton2), for: .touchUpInside)
         button3.addTarget(self, action: #selector(didTapButton3), for: .touchUpInside)
         
-        button.setTitle("Launch Picker", for: .normal)
+        button.setTitle("Launch FS Picker", for: .normal)
         button2.setTitle("Launch Top Cal Picker", for: .normal)
         button3.setTitle("Launch Scroll Top", for: .normal)
         label.text = dateFormatter.string(from: item.date)
@@ -83,15 +84,16 @@ class StartViewController: UIViewController {
     @objc private func didTapButton() {
         print("Tapped Button")
         
-        let pickerController = CalMonthViewController(
-            baseDate: item.date,
-            selectedDateChanged: { [weak self] date in
-                guard let self = self else { return }
-                print("Date Selected")
-                self.item.date = date
-                self.label.text = self.dateFormatter.string(from: date)
-            })
-        present(pickerController, animated: true, completion: nil)
+        let calendarKitSample = FSViewController()
+//        let pickerController = CalMonthViewController(
+//            baseDate: item.date,
+//            selectedDateChanged: { [weak self] date in
+//                guard let self = self else { return }
+//                print("Date Selected")
+//                self.item.date = date
+//                self.label.text = self.dateFormatter.string(from: date)
+//            })
+        present(calendarKitSample, animated: true, completion: nil)
     }
     
     @objc private func didTapButton2() {
