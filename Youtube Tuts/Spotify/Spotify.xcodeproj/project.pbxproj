@@ -28,6 +28,7 @@
 		1E7FC79025F5791800D9FE6B /* FeaturedPlaylistCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1E7FC78F25F5791800D9FE6B /* FeaturedPlaylistCollectionViewCell.swift */; };
 		1E7FC79325F5793F00D9FE6B /* RecommendedTrackCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1E7FC79225F5793F00D9FE6B /* RecommendedTrackCollectionViewCell.swift */; };
 		1E7FC7A025F593C000D9FE6B /* NewReleasesCellViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1E7FC79F25F593BF00D9FE6B /* NewReleasesCellViewModel.swift */; };
+		1E98B9A327036A34004AA71D /* GernreCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1E98B9A227036A34004AA71D /* GernreCollectionViewCell.swift */; };
 		1EBD8E2B264195BF009CF717 /* AlbumViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1EBD8E2A264195BF009CF717 /* AlbumViewController.swift */; };
 		1EBD8E2D26419E13009CF717 /* AlbumDetailsResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1EBD8E2C26419E13009CF717 /* AlbumDetailsResponse.swift */; };
 		1EBD8E312641A4ED009CF717 /* PlaylistDetailsResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1EBD8E302641A4ED009CF717 /* PlaylistDetailsResponse.swift */; };
@@ -77,6 +78,7 @@
 		1E7FC78F25F5791800D9FE6B /* FeaturedPlaylistCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeaturedPlaylistCollectionViewCell.swift; sourceTree = "<group>"; };
 		1E7FC79225F5793F00D9FE6B /* RecommendedTrackCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecommendedTrackCollectionViewCell.swift; sourceTree = "<group>"; };
 		1E7FC79F25F593BF00D9FE6B /* NewReleasesCellViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewReleasesCellViewModel.swift; sourceTree = "<group>"; };
+		1E98B9A227036A34004AA71D /* GernreCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GernreCollectionViewCell.swift; sourceTree = "<group>"; };
 		1EBD8E2A264195BF009CF717 /* AlbumViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlbumViewController.swift; sourceTree = "<group>"; };
 		1EBD8E2C26419E13009CF717 /* AlbumDetailsResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlbumDetailsResponse.swift; sourceTree = "<group>"; };
 		1EBD8E302641A4ED009CF717 /* PlaylistDetailsResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlaylistDetailsResponse.swift; sourceTree = "<group>"; };
@@ -167,6 +169,7 @@
 				1EF1E2B6264F7F6700CD486F /* PlaylistHeaderCollectionReusableView.swift */,
 				1E79DA5727021ACC00CC07B6 /* TitleHeaderCollectionReusableView.swift */,
 				1E79DA592702302C00CC07B6 /* AlbumTrackCollectionViewCell.swift */,
+				1E98B9A227036A34004AA71D /* GernreCollectionViewCell.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -404,6 +407,7 @@
 				1EFCE14825E475FE00FF3063 /* SearchResultsViewController.swift in Sources */,
 				1E79DA5827021ACC00CC07B6 /* TitleHeaderCollectionReusableView.swift in Sources */,
 				1EBD8E2B264195BF009CF717 /* AlbumViewController.swift in Sources */,
+				1E98B9A327036A34004AA71D /* GernreCollectionViewCell.swift in Sources */,
 				1E53397726379BFB00F9994E /* FeaturedPlaylistCellViewModel.swift in Sources */,
 				1E7FC77425F3011400D9FE6B /* FeaturedPlaylistsResponse.swift in Sources */,
 				1E7FC76B25F2F93500D9FE6B /* APIImage.swift in Sources */,
@@ -578,6 +582,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = JA7JN58M85;
 				INFOPLIST_FILE = Spotify/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -598,6 +603,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = JA7JN58M85;
 				INFOPLIST_FILE = Spotify/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
