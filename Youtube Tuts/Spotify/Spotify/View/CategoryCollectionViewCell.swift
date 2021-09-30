@@ -1,13 +1,14 @@
 //
-//  GernreCollectionViewCell.swift
+//  CategoryCollectionViewCell.swift
 //  Spotify
 //
 //  Created by Ryan Cummins on 9/28/21.
 //
 
 import UIKit
+import SDWebImage
 
-class GernreCollectionViewCell: UICollectionViewCell {
+class CategoryCollectionViewCell: UICollectionViewCell {
     static let identifier = "GernreCollectionViewCell"
     
     private let imageView: UIImageView = {
@@ -16,6 +17,8 @@ class GernreCollectionViewCell: UICollectionViewCell {
         iv.tintColor = .white
         iv.image = UIImage(systemName: "music.quarternote.3",
                            withConfiguration: UIImage.SymbolConfiguration(pointSize: 50, weight: .regular))
+//        iv.layer.cornerRadius = 12
+//        iv.layer.masksToBounds = true
         return iv
     }()
     
@@ -51,9 +54,10 @@ class GernreCollectionViewCell: UICollectionViewCell {
     override func layoutSubviews() {
         super.layoutSubviews()
         let constraints = [
-            imageView.trailingAnchor.constraint(equalTo: contentView.trailingAnchor, constant: -10),
+            imageView.trailingAnchor.constraint(equalTo: contentView.trailingAnchor, constant: 6),
 //            imageView.centerXAnchor.constraint(equalTo: contentView.centerXAnchor),
-            imageView.widthAnchor.constraint(equalTo: contentView.widthAnchor, multiplier: 0.5),
+            imageView.topAnchor.constraint(equalTo: contentView.topAnchor, constant: -6),
+            imageView.widthAnchor.constraint(equalTo: imageView.heightAnchor),
             imageView.heightAnchor.constraint(equalTo: contentView.heightAnchor, multiplier: 0.5),
             
 //            label.centerXAnchor.constraint(equalTo: contentView.centerXAnchor),
@@ -73,10 +77,16 @@ class GernreCollectionViewCell: UICollectionViewCell {
     override func prepareForReuse() {
         super.prepareForReuse()
         label.text = nil
+        imageView.image = UIImage(systemName: "music.quarternote.3",
+                                  withConfiguration: UIImage.SymbolConfiguration(pointSize: 50, weight: .regular))
     }
     
-    func configure(with title: String) {
-        label.text = title
+    func configure(with viewModel: CategoryCollectionViewCellViewModel) {
+        label.text = viewModel.title
+        imageView.sd_setImage(with: viewModel.artworkURL, completed: nil)
         contentView.backgroundColor = colors.randomElement()
+        imageView.contentMode = .scaleAspectFit
+        imageView.layer.cornerRadius = 12
+        imageView.layer.masksToBounds = true
     }
 }

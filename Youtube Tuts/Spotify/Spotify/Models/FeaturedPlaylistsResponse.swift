@@ -11,6 +11,10 @@ struct FeaturedPlaylistResponse: Codable {
     let playlists: PlaylistRepsonse
 }
 
+struct CategoryPlaylistResponse: Codable {
+    let playlists: PlaylistRepsonse
+}
+
 struct PlaylistRepsonse: Codable {
     let items: [Playlist]
 }
