@@ -5,6 +5,7 @@
 //  Created by Ryan Cummins on 2/22/21.
 //
 
+import SafariServices
 import UIKit
 
 class SearchViewController: UIViewController, UISearchResultsUpdating, UISearchBarDelegate {
@@ -143,7 +144,12 @@ extension SearchViewController: SearchResultsViewControllerDelagate {
     func didTapResult(_ result: SearchResult) {
         switch result {
         case .artist(let model):
-            break
+            guard let url = URL(string:  model.external_urls["spotify"] ?? "") else {
+                return
+            }
+            let vc = SFSafariViewController(url: url)
+            present(vc, animated: true)
+            
         case .track(let model):
             break
         case .album(let model):
