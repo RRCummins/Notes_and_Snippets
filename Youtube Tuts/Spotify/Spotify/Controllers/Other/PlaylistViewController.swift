@@ -10,6 +10,7 @@ import UIKit
 class PlaylistViewController: UIViewController {
     
     private let playlist: Playlist
+    private var tracks =  [AudioTrack]()
     
     private let collectionView = UICollectionView(
         frame: .zero,
@@ -77,18 +78,19 @@ class PlaylistViewController: UIViewController {
         collectionView.dataSource = self
         collectionView.delegate = self
         
-        APICaller.shared.getPlaylistDetails(for: playlist) { result in
+        APICaller.shared.getPlaylistDetails(for: playlist) { [weak self] result in
             DispatchQueue.main.async {
                 switch result {
                 case .success(let model):
                     // RecommendedTrackCollectionViewCell
-                    self.viewModels = model.tracks.items.compactMap({
+                    self?.tracks = model.tracks.items.compactMap({ $0.track })
+                    self?.viewModels = model.tracks.items.compactMap({
                         RecommendedTrackCellViewModel(
                             name: $0.track.name,
                             artistName: $0.track.artists.first?.name ?? "-",
                             artworkURL: URL(string: $0.track.album?.images.first?.url ?? ""))
                     })
-                    self.collectionView.reloadData()
+                    self?.collectionView.reloadData()
                 case .failure(let error):
                     print(error.localizedDescription, #fileID, #function, #line)
                 }
@@ -159,6 +161,8 @@ extension PlaylistViewController: UICollectionViewDelegate, UICollectionViewData
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         collectionView.deselectItem(at: indexPath, animated: true)
         print("Play a dong here", #fileID, #function, #line)
+        let track = tracks[indexPath.row]
+        PlaybackPresenter.startPlayback(from: self, track: track)
     }
     
     
@@ -167,6 +171,8 @@ extension PlaylistViewController: UICollectionViewDelegate, UICollectionViewData
 extension PlaylistViewController: PlaylistHeaderCollectionReusableViewDelegate {
     func playlistHeaderCollectionReusableViewDidTapPlayAll(_ header: PlaylistHeaderCollectionReusableView) {
         print("Play All in Queue!", #fileID, #function, #line)
+        PlaybackPresenter.startPlayback(from: self,
+                                        tracks: tracks)
     }
     
     
