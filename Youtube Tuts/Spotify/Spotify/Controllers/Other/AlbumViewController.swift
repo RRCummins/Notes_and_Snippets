@@ -150,7 +150,7 @@ func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPat
     collectionView.deselectItem(at: indexPath, animated: true)
     print("Play a dong here", #fileID, #function, #line)
     let track = tracks[indexPath.row]
-    PlaybackPresenter.startPlayback(from: self, track: track)
+    PlaybackPresenter.shared.startPlayback(from: self, track: track)
 }
 
 
@@ -159,7 +159,7 @@ func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPat
 extension AlbumViewController: PlaylistHeaderCollectionReusableViewDelegate {
 func playlistHeaderCollectionReusableViewDidTapPlayAll(_ header: PlaylistHeaderCollectionReusableView) {
     print("Play All in Album!", #fileID, #function, #line)
-    PlaybackPresenter.startPlayback(from: self, tracks: tracks)
+    PlaybackPresenter.shared.startPlayback(from: self, tracks: tracks)
 }
 
 

@@ -6,8 +6,19 @@
 //
 
 import UIKit
+import SDWebImage
+
+protocol PlayerViewControllerDelagate: AnyObject {
+    func didTapPlayPause()
+    func didTapForward()
+    func didTapBackward()
+    func didSlideSlider(_ value: Float)
+}
 
 class PlayerViewController: UIViewController {
+    
+    weak var dataSource: PlayerDataSource?
+    weak var delagate: PlayerViewControllerDelagate?
     
     private let imageView: UIImageView = {
         let iv = UIImageView()
@@ -27,6 +38,7 @@ class PlayerViewController: UIViewController {
         controlsView.delegate = self
         
         configureBarButtons()
+        configureDataSource()
     }
     
     override func viewDidLayoutSubviews() {
@@ -41,6 +53,13 @@ class PlayerViewController: UIViewController {
             y: imageView.bottom+10,
             width: view.width-20,
             height: view.height-imageView.height-view.safeAreaInsets.top-view.safeAreaInsets.bottom-15)
+    }
+    
+    private func configureDataSource() {
+        imageView.sd_setImage(with: dataSource?.imageURL, completed: nil)
+        controlsView.configure(with: PlayerControlsViewModel(
+            title: dataSource?.songName,
+            subtitle: dataSource?.subtitle))
     }
     
     private func configureBarButtons() {
@@ -60,16 +79,20 @@ class PlayerViewController: UIViewController {
 }
 
 extension PlayerViewController: PlayerControlsViewDelegate {
+    func playerControlsView(_ playerControlsView: PlayerControlsView, didSlideSlider value: Float) {
+        delagate?.didSlideSlider(value)
+    }
+    
     func playerControlsViewDidTapPlayPauseButton(_ playerControlsView: PlayerControlsView) {
-        <#code#>
+        delagate?.didTapPlayPause()
     }
     
     func playerControlsViewDidBackwardsButton(_ playerControlsView: PlayerControlsView) {
-        <#code#>
+        delagate?.didTapBackward()
     }
     
     func playerControlsViewDidForwardButton(_ playerControlsView: PlayerControlsView) {
-        <#code#>
+        delagate?.didTapForward()
     }
     
     
