@@ -22,7 +22,7 @@ class PlayerViewController: UIViewController {
     
     private let imageView: UIImageView = {
         let iv = UIImageView()
-        iv.backgroundColor = .systemBlue
+//        iv.backgroundColor = .systemBlue
         iv.contentMode = .scaleAspectFill
         return iv
     }()
@@ -65,6 +65,10 @@ class PlayerViewController: UIViewController {
     private func configureBarButtons() {
         navigationItem.leftBarButtonItem = UIBarButtonItem(barButtonSystemItem: .close, target: self, action: #selector(didTapClose))
         navigationItem.rightBarButtonItem = UIBarButtonItem(barButtonSystemItem: .action, target: self, action: #selector(didTapAction))
+    }
+    
+    public func refreshUI() {
+        configureDataSource()
     }
     
     @objc private func didTapClose() {
