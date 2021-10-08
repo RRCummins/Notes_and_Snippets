@@ -77,9 +77,11 @@ class SearchResultSubtitleTableViewCell: UITableViewCell {
     }
     
     public func configure(with viewModel: SearchResultSubtitleTableViewCellViewModel) {
+        let placeholderImage = UIImage(systemName: "photo")?.withTintColor(.secondaryLabel, renderingMode: .alwaysOriginal)
+        
         title.text = viewModel.title
         subtitle.text = viewModel.subtitle
-        iconImageView.sd_setImage(with: viewModel.url, completed: nil)
+        iconImageView.sd_setImage(with: viewModel.url, placeholderImage: placeholderImage, completed: nil)
     }
     
 }
