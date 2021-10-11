@@ -153,10 +153,10 @@ final class APICaller {
                     "spotify:track:\(track.id)"
                 ]
             ]
-            print(json)
+//            print(json)
             request.httpBody = try? JSONSerialization.data(withJSONObject: json, options: .fragmentsAllowed)
             request.setValue("application/json", forHTTPHeaderField: "Content-Type")
-            print("Adding...")
+//            print("Adding...")
                 let task = URLSession.shared.dataTask(with: request) { data, _, error in
                     guard let data = data, error == nil else {
                         completion(false)
@@ -164,10 +164,10 @@ final class APICaller {
                 }
                 do {
                     let result = try JSONSerialization.jsonObject(with: data, options: .fragmentsAllowed)
-                    print(result)
+//                    print(result)
                     if let response = result as? [String:Any],
                        response["snapshot_id"] as? String != nil {
-                        print("Added Song")
+//                        print("Added Song")
                         completion(true)
                     } else {
                         print("Failed to add Song")
@@ -185,10 +185,52 @@ final class APICaller {
         
     }
     
-    public func removeTrackFromPlaylist(rack: AudioTrack,
-                                        playlist: Playlist,
-                                        completion: @escaping (Bool) -> Void) {
-        
+    public func removeTrackFromPlaylist(
+        track: AudioTrack,
+        playlist: Playlist,
+        completion: @escaping (Bool) -> Void
+    ) {
+        createRequest(
+            with: URL(string: Constants.baseAPIURL + "/playlists/\(playlist.id)/tracks"),
+            type: .DELETE
+        ) { baseRequest in
+            var request = baseRequest
+            let json = [
+                "tracks": [
+                    [
+                        "uri": "spotify:track:\(track.id)"
+                    ]
+                ]
+            ]
+//            print(json)
+            request.httpBody = try? JSONSerialization.data(withJSONObject: json, options: .fragmentsAllowed)
+            request.setValue("application/json", forHTTPHeaderField: "Content-Type")
+//            print("Removing...")
+                let task = URLSession.shared.dataTask(with: request) { data, _, error in
+                    guard let data = data, error == nil else {
+                        completion(false)
+                    return
+                }
+                do {
+                    let result = try JSONSerialization.jsonObject(with: data, options: .fragmentsAllowed)
+//                    print(result)
+                    if let response = result as? [String:Any],
+                       response["snapshot_id"] as? String != nil {
+//                        print("Removed Song")
+                        completion(true)
+                    } else {
+                        print("Failed to Remove Song")
+                        completion(false)
+                    }
+                    print("Failed to Remove Song")
+                } catch {
+                    print(error.localizedDescription)
+                    completion(false)
+                }
+            }
+            task.resume()
+            
+        }
     }
     
     
@@ -405,6 +447,7 @@ final class APICaller {
     enum HTTPMethod: String{
         case GET
         case POST
+        case DELETE
     }
     
     private func createRequest(

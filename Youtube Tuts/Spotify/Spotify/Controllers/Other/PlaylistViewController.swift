@@ -11,6 +11,7 @@ class PlaylistViewController: UIViewController {
     
     private let playlist: Playlist
     private var tracks =  [AudioTrack]()
+    public var isOwner = false
     
     private let collectionView = UICollectionView(
         frame: .zero,
@@ -96,11 +97,19 @@ class PlaylistViewController: UIViewController {
                 }
             }
         }
+        
+        setupGestureRecognizer()
     }
     
     override func viewDidLayoutSubviews() {
         super.viewDidLayoutSubviews()
         collectionView.frame = view.bounds
+    }
+    
+    private func setupGestureRecognizer() {
+        let gesture = UILongPressGestureRecognizer(target: self,
+                                                   action: #selector(didLongPress(_:)))
+        collectionView.addGestureRecognizer(gesture)
     }
     
     @objc private func didTapShare() {
@@ -113,6 +122,38 @@ class PlaylistViewController: UIViewController {
             applicationActivities: [])
         vc.popoverPresentationController?.barButtonItem = navigationItem.rightBarButtonItem
         present(vc, animated: true)
+    }
+    
+    @objc private func didLongPress(_ gesture: UILongPressGestureRecognizer) {
+        guard gesture.state == .began else { return }
+        let touchPoint = gesture.location(in: collectionView)
+        guard let indexPath = collectionView.indexPathForItem(at: touchPoint) else {return}
+        let trackToRemove = tracks[indexPath.row]
+        let actionSheet = UIAlertController(title: trackToRemove.name,
+                                            message: "Would you like to remove this from the playlist?",
+                                            preferredStyle: .actionSheet)
+        actionSheet.addAction(UIAlertAction(title: "Cancel",
+                                            style: .cancel,
+                                            handler: nil))
+        actionSheet.addAction(UIAlertAction(title: "Remove",
+                                            style: .destructive,
+                                            handler: { [weak self] _ in
+            guard let strongSelf = self else {return}
+            APICaller.shared.removeTrackFromPlaylist(track: trackToRemove,
+                                                     playlist: strongSelf.playlist) { sucess in
+                DispatchQueue.main.async {
+                    if sucess {
+//                        print("Removed")
+                        strongSelf.tracks.remove(at: indexPath.row)
+                        strongSelf.viewModels.remove(at: indexPath.row)
+                        strongSelf.collectionView.reloadData()
+                    } else {
+                        print("Failed to remove")
+                    }
+                }
+            }
+        }))
+        present(actionSheet, animated: true, completion: nil)
     }
     
 }
