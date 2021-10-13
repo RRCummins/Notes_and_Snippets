@@ -64,7 +64,7 @@ class LibraryPlaylistViewController: UIViewController {
         view.addSubview(noPlaylistsView)
         noPlaylistsView.delegate = self
         noPlaylistsView.configure(with: ActionLabelViewViewModel(
-            text: "You don't have any PLaylists yet",
+            text: "You don't have any Playlists yet",
             actionTitle: "Create"))
     }
     

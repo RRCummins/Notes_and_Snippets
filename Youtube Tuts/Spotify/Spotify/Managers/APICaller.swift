@@ -48,6 +48,51 @@ final class APICaller {
         } // createRequest completion
     } // getAlbumDetails
     
+    public func getCurrentUserAlbums(completion: @escaping (Result<[Album], Error>) -> Void) {
+            createRequest(
+                with: URL(string: Constants.baseAPIURL + "/me/albums"),
+                type: .GET
+            ) { request in
+                let task = URLSession.shared.dataTask(with: request) { data, _, error in
+                    guard let data = data, error == nil else {
+                        completion(.failure(APIError.failedToGetData))
+                        return
+                    }
+
+                    do {
+                        let result = try JSONDecoder().decode(LibraryAlbumsResponse.self, from: data)
+                        completion(.success(result.items.compactMap({ $0.album })))
+//                        print(result)
+                    }
+                    catch {
+                        completion(.failure(error))
+                    }
+                }
+                task.resume()
+            }
+        }
+    
+    public func saveAlbumToLibrary(album: Album, completion: @escaping (Bool) -> Void) {
+        createRequest(
+            with: URL(string: Constants.baseAPIURL + "/me/albums?ids=\(album.id)"),
+            type: .PUT) { baseRequest in
+                var request = baseRequest
+                request.setValue("application/json", forHTTPHeaderField: "Content-type")
+                let task = URLSession.shared.dataTask(with: request) { _, response, error in
+                    guard let code = (response as? HTTPURLResponse)?.statusCode,
+                          error == nil else {
+                              completion(false)
+                              return
+                          }
+//                    print("Response Code - \(code)")
+                    completion(code >= 200 && code < 300)
+                    
+                }
+                task.resume()
+            }
+        
+    }
+    
     
     //MARK: - Playlists
     
@@ -448,6 +493,7 @@ final class APICaller {
         case GET
         case POST
         case DELETE
+        case PUT
     }
     
     private func createRequest(

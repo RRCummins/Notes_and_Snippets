@@ -78,6 +78,46 @@ class AlbumViewController: UIViewController {
         collectionView.dataSource = self
         collectionView.delegate = self
         
+        fetchData()
+        navigationItem.rightBarButtonItem = UIBarButtonItem(
+            barButtonSystemItem: .action,
+            target: self,
+            action: #selector(didTapActions))
+    } // VDL
+    
+    
+    override func viewDidLayoutSubviews() {
+        super.viewDidLayoutSubviews()
+        collectionView.frame = view.bounds
+    }
+    
+    @objc private func didTapActions() {
+        let actionSheet = UIAlertController(
+            title: album.name,
+            message: "Actions",
+            preferredStyle: .actionSheet)
+        actionSheet.addAction(UIAlertAction(
+            title: "Cancel",
+            style: .cancel,
+            handler: nil)
+        )
+        actionSheet.addAction(UIAlertAction(
+            title: "Save",
+            style: .default,
+            handler: { [weak self] _ in
+                guard let strongSelf = self else {return}
+                APICaller.shared.saveAlbumToLibrary(album: strongSelf.album) { success in
+                    if success {
+                        NotificationCenter.default.post(name: .albumSavedNotification, object: nil)
+                    }
+                }
+            })
+        )
+        
+        present(actionSheet, animated: true)
+    }
+    
+    private func fetchData() {
         APICaller.shared.getAlbumDetails(for: album) { [weak self] result in
             DispatchQueue.main.async {
                 switch result {
@@ -96,13 +136,9 @@ class AlbumViewController: UIViewController {
                 } // switch
             } // dispatchQueue
         } // caller.getAlbumDetails completion
-    } // VDL
+    }
     
-
-override func viewDidLayoutSubviews() {
-    super.viewDidLayoutSubviews()
-    collectionView.frame = view.bounds
-}
+    
 }
 
 extension AlbumViewController: UICollectionViewDelegate, UICollectionViewDataSource {
