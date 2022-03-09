@@ -9,9 +9,11 @@ import SwiftUI
 
 @main
 struct SixTryApp: App {
+    @State var dm = SixTryDataModel()
     var body: some Scene {
         WindowGroup {
-            ContentView()
+            GameView()
+                .environmentObject(dm)
         }
     }
 }
