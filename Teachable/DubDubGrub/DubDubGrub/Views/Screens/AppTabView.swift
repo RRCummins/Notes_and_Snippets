@@ -19,11 +19,12 @@ struct AppTabView: View {
                 .tabItem {
                     Label("Locations", systemImage: "building")
                 }
-            
-            ProfileView(profileNote: "Lorem Ip", characterCount: 28)
-                .tabItem {
-                    Label("Profile", systemImage: "person")
-                }
+            NavigationView {
+                ProfileView(profileNote: "Lorem Ip", characterCount: 28)
+            }
+            .tabItem {
+                Label("Profile", systemImage: "person")
+            }
         }
         .accentColor(.brandPrimary)
     }
