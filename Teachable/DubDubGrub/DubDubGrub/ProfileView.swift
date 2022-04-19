@@ -51,29 +51,52 @@ struct ProfileView: View {
                 }
                 .padding()
             }
-            //Text Access
-            HStack {
-                HStack {
-                    Text("Bio: ")
-                    Text(String(characterCount))
-                        .foregroundColor((characterCount <= 50 ? .green : .red))
-                    Text(" characters remain")
-                }
-                Button(action: {}, label: {
-                    Label("Check Out", systemImage: "mappin.and.ellipse")
-                })
-                .foregroundColor(.pink)
-            }
+            
             //Text Box
-            TextField("", text: $profileNote)
-                .frame(height: 130, alignment: .center)
-                .cornerRadius(15)
-                .border(Color.black, width: 1)
+            VStack(alignment: .leading, spacing: 8) {
+                //Text Access
+                HStack {
+                    HStack {
+                        Text("Bio: ")
+                            .font(.callout)
+                            .foregroundColor(.secondary)
+                        Text(String(100 - bio.count))
+                            .bold()
+                            .font(.callout)
+                            .foregroundColor(bio.count <= 50 ? .brandPrimary : Color(.systemPink))
+                        Text(" Characters remain")
+                            .font(.callout)
+                            .foregroundColor(.secondary)
+                    }
+                    .font(.callout)
+                    .foregroundColor(.secondary
+                    )
+                    Button {
+                        
+                    } label: {
+                        Label("Check Out", systemImage: "mappin.and.ellipse")
+                    }
+                    .foregroundColor(.pink)
+                }
+                
+                TextEditor(text: $bio)
+                    .frame(height: 130, alignment: .center)
+                    .overlay(RoundedRectangle(cornerRadius: 8)
+                        .stroke(Color.secondary, lineWidth: 1))
+            }
+            .padding(.horizontal, 16)
             
             //Button
             Spacer()
-            Button("Save Profile") {
-                //TODO: - Save Profile
+            Button {
+                
+            } label: {
+                Text("Create Profile")
+                    .bold()
+                    .frame(width: 280, height: 44)
+                    .background(Color.brandPrimary)
+                    .foregroundColor(.white)
+                    .cornerRadius(8)
             }
         }
         .navigationTitle("Profile")
