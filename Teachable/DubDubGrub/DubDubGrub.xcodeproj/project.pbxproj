@@ -19,6 +19,7 @@
 		1ED1C404280F7AB700A15F4F /* CustomModifiers.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1ED1C403280F7AB700A15F4F /* CustomModifiers.swift */; };
 		1ED1C406280F7AEE00A15F4F /* View+Ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1ED1C405280F7AEE00A15F4F /* View+Ext.swift */; };
 		1ED1C408280F7CD200A15F4F /* DDGButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1ED1C407280F7CD200A15F4F /* DDGButton.swift */; };
+		1ED1C41028136BDF00A15F4F /* DDGLocation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1ED1C40F28136BDF00A15F4F /* DDGLocation.swift */; };
 		1EF1E2D726585E3200CD486F /* DubDubGrubApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1EF1E2D626585E3200CD486F /* DubDubGrubApp.swift */; };
 		1EF1E2DB26585E3600CD486F /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 1EF1E2DA26585E3600CD486F /* Assets.xcassets */; };
 		1EF1E2DE26585E3600CD486F /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 1EF1E2DD26585E3600CD486F /* Preview Assets.xcassets */; };
@@ -38,6 +39,7 @@
 		1ED1C403280F7AB700A15F4F /* CustomModifiers.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomModifiers.swift; sourceTree = "<group>"; };
 		1ED1C405280F7AEE00A15F4F /* View+Ext.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "View+Ext.swift"; sourceTree = "<group>"; };
 		1ED1C407280F7CD200A15F4F /* DDGButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DDGButton.swift; sourceTree = "<group>"; };
+		1ED1C40F28136BDF00A15F4F /* DDGLocation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DDGLocation.swift; sourceTree = "<group>"; };
 		1EF1E2D326585E3200CD486F /* DubDubGrub.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = DubDubGrub.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		1EF1E2D626585E3200CD486F /* DubDubGrubApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DubDubGrubApp.swift; sourceTree = "<group>"; };
 		1EF1E2DA26585E3600CD486F /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -114,6 +116,14 @@
 			path = CustomViews;
 			sourceTree = "<group>";
 		};
+		1ED1C40E28136BA800A15F4F /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				1ED1C40F28136BDF00A15F4F /* DDGLocation.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
 		1EF1E2CA26585E3100CD486F = {
 			isa = PBXGroup;
 			children = (
@@ -134,6 +144,7 @@
 		1EF1E2D526585E3200CD486F /* DubDubGrub */ = {
 			isa = PBXGroup;
 			children = (
+				1ED1C40E28136BA800A15F4F /* Model */,
 				1ED1C409280F7E2D00A15F4F /* Extensions */,
 				1ED1C40A280F7E4200A15F4F /* Views */,
 				1EC27841266AC86E00B16CFE /* DubDubGrub.entitlements */,
@@ -227,6 +238,7 @@
 				1EC2784A266ACDA300B16CFE /* LocationMapView.swift in Sources */,
 				1EC2784C266ACDC400B16CFE /* LocationListView.swift in Sources */,
 				1EC27850266BB91E00B16CFE /* LocationDetailView.swift in Sources */,
+				1ED1C41028136BDF00A15F4F /* DDGLocation.swift in Sources */,
 				1EC27848266ACD5400B16CFE /* AppTabView.swift in Sources */,
 				1EC2784E266ACDD500B16CFE /* ProfileView.swift in Sources */,
 				1ED1C406280F7AEE00A15F4F /* View+Ext.swift in Sources */,
